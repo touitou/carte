@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_558ca5297fc6c3941d76c515333f2d49 {
+                #map_ede10bab4d66221a28a1f6ec4965c2d6 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,14 +54,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_558ca5297fc6c3941d76c515333f2d49" ></div>
+            <div class="folium-map" id="map_ede10bab4d66221a28a1f6ec4965c2d6" ></div>
         
 </body>
 <script>
     
     
-            var map_558ca5297fc6c3941d76c515333f2d49 = L.map(
-                "map_558ca5297fc6c3941d76c515333f2d49",
+            var map_ede10bab4d66221a28a1f6ec4965c2d6 = L.map(
+                "map_ede10bab4d66221a28a1f6ec4965c2d6",
                 {
                     center: [48.783302767091136, 2.103888836925335],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +78,7 @@
 
         
     
-            var tile_layer_589917ad3586a3cea684889ba44c50d0 = L.tileLayer(
+            var tile_layer_60606d992517488a2de3427ad2049009 = L.tileLayer(
                 "https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -95,631 +95,793 @@
             );
         
     
-            tile_layer_589917ad3586a3cea684889ba44c50d0.addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            tile_layer_60606d992517488a2de3427ad2049009.addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-            var polygon_860cd448f025d64c682906c3f934ae4b = L.polygon(
+            var circle_marker_cffa456aa57e4e9ddbcae368c1435c0a = L.circleMarker(
+                [48.783302767091136, 2.103888836925335],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_f2713b15ecca1d99c52fff3dd32ae205 = L.polygon(
                 [[48.7831507, 2.102834], [48.7830608, 2.1031791], [48.7830934, 2.1032926], [48.782797, 2.1044314], [48.782853, 2.1046255], [48.7834021, 2.1049521], [48.7838453, 2.1032454], [48.7831507, 2.102834]],
                 {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_fd311a11099221f7548589065bfd6060 = L.popup({
+        var popup_eb5a396a646e8399cd14d1a0cd80eb18 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_d0c4b36e5d2893c6ae1a6443c76fae82 = $(`<div id="html_d0c4b36e5d2893c6ae1a6443c76fae82" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78646000CB0040<br>     <b>Date :</b> 2024-06-12<br>     <b>Prix :</b> 14,635,978 €<br>     <b>Surface :</b> 90417 m²<br>     <b>Prix/m² :</b> 161.87 €/m²<br>     <b>Prix marché :</b> 3258.32 €/m²<br>     <b>Écart :</b> 3096.45 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_fd311a11099221f7548589065bfd6060.setContent(html_d0c4b36e5d2893c6ae1a6443c76fae82);
+                var html_74ba1101bacd3882def4bb51e77712ae = $(`<div id="html_74ba1101bacd3882def4bb51e77712ae" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78646000CB0040<br>     <b>Date :</b> 2024-06-12<br>     <b>Prix :</b> 14,635,978 €<br>     <b>Surface :</b> 90417 m²<br>     <b>Prix/m² :</b> 161.87 €/m²<br>     <b>Prix marché :</b> 3258.32 €/m²<br>     <b>Écart :</b> 3096.45 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_eb5a396a646e8399cd14d1a0cd80eb18.setContent(html_74ba1101bacd3882def4bb51e77712ae);
             
         
 
-        polygon_860cd448f025d64c682906c3f934ae4b.bindPopup(popup_fd311a11099221f7548589065bfd6060)
+        polygon_f2713b15ecca1d99c52fff3dd32ae205.bindPopup(popup_eb5a396a646e8399cd14d1a0cd80eb18)
         ;
 
         
     
     
-            var polygon_076bcf73a76155e53d173c8513ec5d89 = L.polygon(
+            var circle_marker_9e87d10b3f36c36fadaafee69ab9b263 = L.circleMarker(
+                [48.778802034616405, 2.5761012107218044],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_9922d6b38a0500dec9df1716fcf2177b = L.polygon(
                 [[48.7790576, 2.5748452], [48.7784863, 2.5772729], [48.7785594, 2.5773115], [48.7787336, 2.5765661], [48.7789648, 2.5755773], [48.779114, 2.5749393], [48.7790576, 2.5748452]],
                 {"bubblingMouseEvents": true, "color": "#3bc300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3bc300", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_c71d320577e810b0bbf6b433bb5d3705 = L.popup({
+        var popup_dad32f04956e42de278a254d35572f7d = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_71c2b6da7b176e683338fd7c2fea370a = $(`<div id="html_71c2b6da7b176e683338fd7c2fea370a" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 94060000AT0069<br>     <b>Date :</b> 2024-04-29<br>     <b>Prix :</b> 8,165,958 €<br>     <b>Surface :</b> 43912 m²<br>     <b>Prix/m² :</b> 185.96 €/m²<br>     <b>Prix marché :</b> 1673.26 €/m²<br>     <b>Écart :</b> 1487.3 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_c71d320577e810b0bbf6b433bb5d3705.setContent(html_71c2b6da7b176e683338fd7c2fea370a);
+                var html_999710b8a0a0a1e4d0378c9446e49fca = $(`<div id="html_999710b8a0a0a1e4d0378c9446e49fca" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 94060000AT0069<br>     <b>Date :</b> 2024-04-29<br>     <b>Prix :</b> 8,165,958 €<br>     <b>Surface :</b> 43912 m²<br>     <b>Prix/m² :</b> 185.96 €/m²<br>     <b>Prix marché :</b> 1673.26 €/m²<br>     <b>Écart :</b> 1487.3 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_dad32f04956e42de278a254d35572f7d.setContent(html_999710b8a0a0a1e4d0378c9446e49fca);
             
         
 
-        polygon_076bcf73a76155e53d173c8513ec5d89.bindPopup(popup_c71d320577e810b0bbf6b433bb5d3705)
+        polygon_9922d6b38a0500dec9df1716fcf2177b.bindPopup(popup_dad32f04956e42de278a254d35572f7d)
         ;
 
         
     
     
-            var polygon_21d1dbcfce91147d7d391321bbfd35fc = L.polygon(
+            var circle_marker_507250bff5376e5383892d180227d077 = L.circleMarker(
+                [48.87121932523237, 2.15379212815808],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_636607d61ac5b4a9617ef976ba74abbf = L.polygon(
                 [[48.8705291, 2.1529289], [48.8706258, 2.153899], [48.8709059, 2.1544976], [48.8712985, 2.1553367], [48.8715334, 2.1558389], [48.8716772, 2.1557666], [48.8718526, 2.1557073], [48.8720311, 2.1556746], [48.8722108, 2.1556692], [48.8722242, 2.1556707], [48.871606, 2.1541704], [48.8713362, 2.1534734], [48.8716751, 2.1530574], [48.8720159, 2.152639], [48.8717374, 2.1523366], [48.8712102, 2.1529894], [48.8711278, 2.1527237], [48.8709876, 2.1522709], [48.87092, 2.1520529], [48.8708158, 2.1517165], [48.8708083, 2.1516919], [48.8704223, 2.1518578], [48.8704718, 2.1523552], [48.8705291, 2.1529289]],
                 {"bubblingMouseEvents": true, "color": "#31cd00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#31cd00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_ac87fe2a9302ef5c82a0ba1ff15dcf06 = L.popup({
+        var popup_ed44a0cb2069b3ba735aa70a9e10584b = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_04273647366c93c86dce59d90998008d = $(`<div id="html_04273647366c93c86dce59d90998008d" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 92063000BR0247<br>     <b>Date :</b> 2024-07-11<br>     <b>Prix :</b> 2,365,000 €<br>     <b>Surface :</b> 26274 m²<br>     <b>Prix/m² :</b> 90.01 €/m²<br>     <b>Prix marché :</b> 2147.06 €/m²<br>     <b>Écart :</b> 2057.05 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_ac87fe2a9302ef5c82a0ba1ff15dcf06.setContent(html_04273647366c93c86dce59d90998008d);
+                var html_86cb2a7ef845bc2edc88b56d1dc41255 = $(`<div id="html_86cb2a7ef845bc2edc88b56d1dc41255" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 92063000BR0247<br>     <b>Date :</b> 2024-07-11<br>     <b>Prix :</b> 2,365,000 €<br>     <b>Surface :</b> 26274 m²<br>     <b>Prix/m² :</b> 90.01 €/m²<br>     <b>Prix marché :</b> 2147.06 €/m²<br>     <b>Écart :</b> 2057.05 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_ed44a0cb2069b3ba735aa70a9e10584b.setContent(html_86cb2a7ef845bc2edc88b56d1dc41255);
             
         
 
-        polygon_21d1dbcfce91147d7d391321bbfd35fc.bindPopup(popup_ac87fe2a9302ef5c82a0ba1ff15dcf06)
+        polygon_636607d61ac5b4a9617ef976ba74abbf.bindPopup(popup_ed44a0cb2069b3ba735aa70a9e10584b)
         ;
 
         
     
     
-            var polygon_a91466c0875b55755c1c269a8128091c = L.polygon(
+            var circle_marker_1245edc1b5b849cc2e5572241b0943fa = L.circleMarker(
+                [48.82142423943837, 2.671747929900066],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_32bb7c54624582a502487a780833b5ed = L.polygon(
                 [[48.8202286, 2.6698855], [48.8205156, 2.6717985], [48.8208582, 2.6740821], [48.820912, 2.6741333], [48.8221178, 2.6737185], [48.8221107, 2.673672], [48.8221678, 2.6736524], [48.8221747, 2.6736989], [48.8226194, 2.6735459], [48.8225061, 2.6727898], [48.8225058, 2.6727881], [48.8224798, 2.6726151], [48.8224795, 2.6726134], [48.8224507, 2.6724206], [48.8224489, 2.6724089], [48.8220233, 2.6695709], [48.8219994, 2.6694113], [48.8218753, 2.6694445], [48.8202286, 2.6698855]],
                 {"bubblingMouseEvents": true, "color": "#29d500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#29d500", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_fbee9836ab5710d37a7e56a05b6f7fa5 = L.popup({
+        var popup_826819069ac4cd38e8df72416ed19458 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_ba601ada6f7a865d2f9a7df81e16cdc4 = $(`<div id="html_ba601ada6f7a865d2f9a7df81e16cdc4" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77146000AM0092<br>     <b>Date :</b> 2024-11-27<br>     <b>Prix :</b> 7,953,372 €<br>     <b>Surface :</b> 63122 m²<br>     <b>Prix/m² :</b> 126.0 €/m²<br>     <b>Prix marché :</b> 852.7 €/m²<br>     <b>Écart :</b> 726.7 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_fbee9836ab5710d37a7e56a05b6f7fa5.setContent(html_ba601ada6f7a865d2f9a7df81e16cdc4);
+                var html_2355da85e7e6015d5c57bd8d9ede71f5 = $(`<div id="html_2355da85e7e6015d5c57bd8d9ede71f5" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77146000AM0092<br>     <b>Date :</b> 2024-11-27<br>     <b>Prix :</b> 7,953,372 €<br>     <b>Surface :</b> 63122 m²<br>     <b>Prix/m² :</b> 126.0 €/m²<br>     <b>Prix marché :</b> 852.7 €/m²<br>     <b>Écart :</b> 726.7 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_826819069ac4cd38e8df72416ed19458.setContent(html_2355da85e7e6015d5c57bd8d9ede71f5);
             
         
 
-        polygon_a91466c0875b55755c1c269a8128091c.bindPopup(popup_fbee9836ab5710d37a7e56a05b6f7fa5)
+        polygon_32bb7c54624582a502487a780833b5ed.bindPopup(popup_826819069ac4cd38e8df72416ed19458)
         ;
 
         
     
     
-            var polygon_45871ddd83f056c4b4cf60d47889801b = L.polygon(
+            var circle_marker_5046c04082fe055725d8c82dd64ca620 = L.circleMarker(
+                [48.778802034616405, 2.5761012107218044],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_331ba3b3c199a4cba7b28e9f6ce9382f = L.polygon(
                 [[48.7790576, 2.5748452], [48.7784863, 2.5772729], [48.7785594, 2.5773115], [48.7787336, 2.5765661], [48.7789648, 2.5755773], [48.779114, 2.5749393], [48.7790576, 2.5748452]],
                 {"bubblingMouseEvents": true, "color": "#1be300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1be300", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_4e7c1ab2a758b3419b92956988a0e093 = L.popup({
+        var popup_eb8fb278435dd441f0387fa319640c2e = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_bf8559d31d5af51d05b833bd8e7432fa = $(`<div id="html_bf8559d31d5af51d05b833bd8e7432fa" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 94060000AT0069<br>     <b>Date :</b> 2024-12-05<br>     <b>Prix :</b> 43,611,328 €<br>     <b>Surface :</b> 43912 m²<br>     <b>Prix/m² :</b> 993.15 €/m²<br>     <b>Prix marché :</b> 1673.26 €/m²<br>     <b>Écart :</b> 680.1 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_4e7c1ab2a758b3419b92956988a0e093.setContent(html_bf8559d31d5af51d05b833bd8e7432fa);
+                var html_b9b3398f774f2953e665739d937a7dfd = $(`<div id="html_b9b3398f774f2953e665739d937a7dfd" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 94060000AT0069<br>     <b>Date :</b> 2024-12-05<br>     <b>Prix :</b> 43,611,328 €<br>     <b>Surface :</b> 43912 m²<br>     <b>Prix/m² :</b> 993.15 €/m²<br>     <b>Prix marché :</b> 1673.26 €/m²<br>     <b>Écart :</b> 680.1 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_eb8fb278435dd441f0387fa319640c2e.setContent(html_b9b3398f774f2953e665739d937a7dfd);
             
         
 
-        polygon_45871ddd83f056c4b4cf60d47889801b.bindPopup(popup_4e7c1ab2a758b3419b92956988a0e093)
+        polygon_331ba3b3c199a4cba7b28e9f6ce9382f.bindPopup(popup_eb8fb278435dd441f0387fa319640c2e)
         ;
 
         
     
     
-            var polygon_2a00de633328307d9a3ca08c48e6fd93 = L.polygon(
+            var circle_marker_86560d6b1f84dd3e903e268d8afe6333 = L.circleMarker(
+                [48.612854974714956, 2.552960460487051],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_3266ece6dca729a61b6779a083f03235 = L.polygon(
                 [[48.6126828, 2.5531564], [48.6132, 2.5528278], [48.613224, 2.5527391], [48.6125704, 2.5529895], [48.6126236, 2.553179], [48.6126828, 2.5531564]],
                 {"bubblingMouseEvents": true, "color": "#15e900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15e900", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_eae7da90d084480a5ad477bce38e7074 = L.popup({
+        var popup_8adaeb9d2199bfbba639d8a09e05ff4e = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_7c1e05f738c8c7effca4913118251452 = $(`<div id="html_7c1e05f738c8c7effca4913118251452" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77251000ZF0310<br>     <b>Date :</b> 2024-09-24<br>     <b>Prix :</b> 6,630,316 €<br>     <b>Surface :</b> 30000 m²<br>     <b>Prix/m² :</b> 221.01 €/m²<br>     <b>Prix marché :</b> 1022.17 €/m²<br>     <b>Écart :</b> 801.16 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_eae7da90d084480a5ad477bce38e7074.setContent(html_7c1e05f738c8c7effca4913118251452);
+                var html_9df7a2d2199dda2dfbbb5cce301f9aff = $(`<div id="html_9df7a2d2199dda2dfbbb5cce301f9aff" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77251000ZF0310<br>     <b>Date :</b> 2024-09-24<br>     <b>Prix :</b> 6,630,316 €<br>     <b>Surface :</b> 30000 m²<br>     <b>Prix/m² :</b> 221.01 €/m²<br>     <b>Prix marché :</b> 1022.17 €/m²<br>     <b>Écart :</b> 801.16 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_8adaeb9d2199bfbba639d8a09e05ff4e.setContent(html_9df7a2d2199dda2dfbbb5cce301f9aff);
             
         
 
-        polygon_2a00de633328307d9a3ca08c48e6fd93.bindPopup(popup_eae7da90d084480a5ad477bce38e7074)
+        polygon_3266ece6dca729a61b6779a083f03235.bindPopup(popup_8adaeb9d2199bfbba639d8a09e05ff4e)
         ;
 
         
     
     
-            var polygon_e4741b36b83352e5173f01529c20ce3f = L.polygon(
+            var circle_marker_16f6deb8032089ae42d6ba94316a3de3 = L.circleMarker(
+                [49.055705436082526, 2.4855281551972777],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_918cb4db8d18e4a7c1a1eb266fea2bd8 = L.polygon(
                 [[49.054814, 2.4849013], [49.0547428, 2.4848859], [49.0546438, 2.485945], [49.0546743, 2.4860069], [49.0562791, 2.4863591], [49.0568896, 2.4859088], [49.0566148, 2.4850281], [49.054838, 2.4846436], [49.054814, 2.4849013]],
                 {"bubblingMouseEvents": true, "color": "#15e900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#15e900", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_eb381d57e7262551ef4368e8b43b8e2c = L.popup({
+        var popup_1e2b18039e7f585c90d05c99a12de609 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_6cc953b027040b7992229293e18e729a = $(`<div id="html_6cc953b027040b7992229293e18e729a" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95509000ZE0123<br>     <b>Date :</b> 2024-04-18<br>     <b>Prix :</b> 4,643,060 €<br>     <b>Surface :</b> 22355 m²<br>     <b>Prix/m² :</b> 207.7 €/m²<br>     <b>Prix marché :</b> 1256.28 €/m²<br>     <b>Écart :</b> 1048.58 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_eb381d57e7262551ef4368e8b43b8e2c.setContent(html_6cc953b027040b7992229293e18e729a);
+                var html_c6746d7aa1792a818d9a01ea2663a11e = $(`<div id="html_c6746d7aa1792a818d9a01ea2663a11e" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95509000ZE0123<br>     <b>Date :</b> 2024-04-18<br>     <b>Prix :</b> 4,643,060 €<br>     <b>Surface :</b> 22355 m²<br>     <b>Prix/m² :</b> 207.7 €/m²<br>     <b>Prix marché :</b> 1256.28 €/m²<br>     <b>Écart :</b> 1048.58 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_1e2b18039e7f585c90d05c99a12de609.setContent(html_c6746d7aa1792a818d9a01ea2663a11e);
             
         
 
-        polygon_e4741b36b83352e5173f01529c20ce3f.bindPopup(popup_eb381d57e7262551ef4368e8b43b8e2c)
+        polygon_918cb4db8d18e4a7c1a1eb266fea2bd8.bindPopup(popup_1e2b18039e7f585c90d05c99a12de609)
         ;
 
         
     
     
-            var polygon_dad0a19f54fef19efdc24992a2881748 = L.polygon(
+            var circle_marker_a4b2a03add8477dd3c9aed54654ce3c8 = L.circleMarker(
+                [49.0544801, 2.4878633999999997],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_226552f8daa609827035752be8605951 = L.polygon(
                 [[49.054577, 2.4878343], [49.054439, 2.487808], [49.0544243, 2.4879479], [49.054577, 2.4878343]],
                 {"bubblingMouseEvents": true, "color": "#14ea00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#14ea00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_e81d5b478a36b768e0cff5025897d9a8 = L.popup({
+        var popup_c9f14357739c6ed7deae31151d2aeef1 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_6c905b47b0bd208fd869b325eecb0560 = $(`<div id="html_6c905b47b0bd208fd869b325eecb0560" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95509000ZE0138<br>     <b>Date :</b> 2024-05-31<br>     <b>Prix :</b> 6,104,974 €<br>     <b>Surface :</b> 23052 m²<br>     <b>Prix/m² :</b> 264.83 €/m²<br>     <b>Prix marché :</b> 1256.28 €/m²<br>     <b>Écart :</b> 991.45 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_e81d5b478a36b768e0cff5025897d9a8.setContent(html_6c905b47b0bd208fd869b325eecb0560);
+                var html_834435f27d282f6dfb265493a330dd4c = $(`<div id="html_834435f27d282f6dfb265493a330dd4c" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95509000ZE0138<br>     <b>Date :</b> 2024-05-31<br>     <b>Prix :</b> 6,104,974 €<br>     <b>Surface :</b> 23052 m²<br>     <b>Prix/m² :</b> 264.83 €/m²<br>     <b>Prix marché :</b> 1256.28 €/m²<br>     <b>Écart :</b> 991.45 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_c9f14357739c6ed7deae31151d2aeef1.setContent(html_834435f27d282f6dfb265493a330dd4c);
             
         
 
-        polygon_dad0a19f54fef19efdc24992a2881748.bindPopup(popup_e81d5b478a36b768e0cff5025897d9a8)
+        polygon_226552f8daa609827035752be8605951.bindPopup(popup_c9f14357739c6ed7deae31151d2aeef1)
         ;
 
         
     
     
-            var polygon_d9e09a8842100ed537c76acb8f7fc3ca = L.polygon(
+            var circle_marker_2f0a85f69f865d8f1689154394f91634 = L.circleMarker(
+                [49.054921210598756, 2.021001806683544],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_ef9411be05010e263c7c493c5ab3f223 = L.polygon(
                 [[49.0553236, 2.0210587], [49.0549891, 2.0209679], [49.0546433, 2.0208733], [49.0546308, 2.0210159], [49.0553163, 2.0211053], [49.0553236, 2.0210587]],
                 {"bubblingMouseEvents": true, "color": "#13eb00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#13eb00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_b62cf7444cfc15ee71a40c3905c8c704 = L.popup({
+        var popup_32c4bee58727e01b13f5ebb004bd2550 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_9d5ccaa935e4d340c65926dc26a44edd = $(`<div id="html_9d5ccaa935e4d340c65926dc26a44edd" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95510000AB0190<br>     <b>Date :</b> 2024-10-03<br>     <b>Prix :</b> 3,400,000 €<br>     <b>Surface :</b> 21814 m²<br>     <b>Prix/m² :</b> 155.86 €/m²<br>     <b>Prix marché :</b> 1126.94 €/m²<br>     <b>Écart :</b> 971.08 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_b62cf7444cfc15ee71a40c3905c8c704.setContent(html_9d5ccaa935e4d340c65926dc26a44edd);
+                var html_f1e4218a3947d5523bb4f3a7f8242776 = $(`<div id="html_f1e4218a3947d5523bb4f3a7f8242776" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95510000AB0190<br>     <b>Date :</b> 2024-10-03<br>     <b>Prix :</b> 3,400,000 €<br>     <b>Surface :</b> 21814 m²<br>     <b>Prix/m² :</b> 155.86 €/m²<br>     <b>Prix marché :</b> 1126.94 €/m²<br>     <b>Écart :</b> 971.08 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_32c4bee58727e01b13f5ebb004bd2550.setContent(html_f1e4218a3947d5523bb4f3a7f8242776);
             
         
 
-        polygon_d9e09a8842100ed537c76acb8f7fc3ca.bindPopup(popup_b62cf7444cfc15ee71a40c3905c8c704)
+        polygon_ef9411be05010e263c7c493c5ab3f223.bindPopup(popup_32c4bee58727e01b13f5ebb004bd2550)
         ;
 
         
     
     
-            var polygon_bf415c963a0d45512388385242a4d97b = L.polygon(
+            var circle_marker_a162b69d1adb4561f8734e93f038ffaa = L.circleMarker(
+                [48.99135124581358, 2.455103562792186],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_8859d40c09cdff1f6c193ab8c1cae9fa = L.polygon(
                 [[48.9918201, 2.4537505], [48.990211, 2.454844], [48.9904533, 2.4556755], [48.9906922, 2.4564758], [48.9907832, 2.4564362], [48.9908346, 2.456416], [48.9908786, 2.4564195], [48.9909077, 2.4564316], [48.9909265, 2.4564478], [48.9909394, 2.4564623], [48.9909883, 2.4565171], [48.9909917, 2.4565155], [48.9913404, 2.4561892], [48.9917239, 2.4558319], [48.9921266, 2.455456], [48.9922353, 2.4553576], [48.992524, 2.4550359], [48.9925138, 2.4546633], [48.9923587, 2.4544692], [48.9922761, 2.4543694], [48.9920905, 2.4541159], [48.9919227, 2.4538888], [48.9918201, 2.4537505]],
                 {"bubblingMouseEvents": true, "color": "#12ec00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#12ec00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_fd8c8443839e92fe3f59221c18509c6b = L.popup({
+        var popup_35cfd231cf9f6fb12b65ffe43c28d8f1 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_7aaa97a10a27c6f86791722eae19b492 = $(`<div id="html_7aaa97a10a27c6f86791722eae19b492" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95277000AL0092<br>     <b>Date :</b> 2024-11-12<br>     <b>Prix :</b> 6,000,000 €<br>     <b>Surface :</b> 29813 m²<br>     <b>Prix/m² :</b> 201.25 €/m²<br>     <b>Prix marché :</b> 884.62 €/m²<br>     <b>Écart :</b> 683.36 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_fd8c8443839e92fe3f59221c18509c6b.setContent(html_7aaa97a10a27c6f86791722eae19b492);
+                var html_42df6063b5fc46ea4a6d37fd47dc4279 = $(`<div id="html_42df6063b5fc46ea4a6d37fd47dc4279" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95277000AL0092<br>     <b>Date :</b> 2024-11-12<br>     <b>Prix :</b> 6,000,000 €<br>     <b>Surface :</b> 29813 m²<br>     <b>Prix/m² :</b> 201.25 €/m²<br>     <b>Prix marché :</b> 884.62 €/m²<br>     <b>Écart :</b> 683.36 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_35cfd231cf9f6fb12b65ffe43c28d8f1.setContent(html_42df6063b5fc46ea4a6d37fd47dc4279);
             
         
 
-        polygon_bf415c963a0d45512388385242a4d97b.bindPopup(popup_fd8c8443839e92fe3f59221c18509c6b)
+        polygon_8859d40c09cdff1f6c193ab8c1cae9fa.bindPopup(popup_35cfd231cf9f6fb12b65ffe43c28d8f1)
         ;
 
         
     
     
-            var polygon_80850728e6af08cd75dc710692e462c9 = L.polygon(
+            var circle_marker_1319ce07f691baf5c42956fc225db06f = L.circleMarker(
+                [49.05799400000001, 2.0247310333333335],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_d7d1325223c0261765baa4ed2d5262c3 = L.polygon(
                 [[49.0580558, 2.0246503], [49.0579649, 2.0245864], [49.0579613, 2.0249564], [49.0580558, 2.0246503]],
                 {"bubblingMouseEvents": true, "color": "#10ee00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#10ee00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_987e2c596599f834cb5bc9ef92a3a2ed = L.popup({
+        var popup_e0cf97a541794596a92e568647c2f9fb = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_b98c576547c8e2a67b2910a35fa96b02 = $(`<div id="html_b98c576547c8e2a67b2910a35fa96b02" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95510000HR0228<br>     <b>Date :</b> 2024-11-08<br>     <b>Prix :</b> 3,055,000 €<br>     <b>Surface :</b> 18853 m²<br>     <b>Prix/m² :</b> 162.04 €/m²<br>     <b>Prix marché :</b> 1126.94 €/m²<br>     <b>Écart :</b> 964.9 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_987e2c596599f834cb5bc9ef92a3a2ed.setContent(html_b98c576547c8e2a67b2910a35fa96b02);
+                var html_6286f41ed699e1a854c257da8672dab8 = $(`<div id="html_6286f41ed699e1a854c257da8672dab8" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95510000HR0228<br>     <b>Date :</b> 2024-11-08<br>     <b>Prix :</b> 3,055,000 €<br>     <b>Surface :</b> 18853 m²<br>     <b>Prix/m² :</b> 162.04 €/m²<br>     <b>Prix marché :</b> 1126.94 €/m²<br>     <b>Écart :</b> 964.9 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_e0cf97a541794596a92e568647c2f9fb.setContent(html_6286f41ed699e1a854c257da8672dab8);
             
         
 
-        polygon_80850728e6af08cd75dc710692e462c9.bindPopup(popup_987e2c596599f834cb5bc9ef92a3a2ed)
+        polygon_d7d1325223c0261765baa4ed2d5262c3.bindPopup(popup_e0cf97a541794596a92e568647c2f9fb)
         ;
 
         
     
     
-            var polygon_3eb6b5efb35f02f252613bb0e43c1aea = L.polygon(
+            var circle_marker_77bc167531604133e991a7e96c7ad8b4 = L.circleMarker(
+                [49.054600280340026, 2.4901741383952163],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_b887db8eb512a74572f937dbf16e2f1a = L.polygon(
                 [[49.0549962, 2.4910324], [49.0549954, 2.4910313], [49.0547792, 2.4896979], [49.0542422, 2.4895815], [49.0542109, 2.4898611], [49.0542818, 2.4898794], [49.0542438, 2.4902214], [49.0549962, 2.4910324]],
                 {"bubblingMouseEvents": true, "color": "#0bf300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0bf300", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_f974acbbc1a6fd51007f580581a76ffe = L.popup({
+        var popup_0e914f89b1faeb5f38381eb106da1138 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_95b0b48d58778f447c759488bdef8e18 = $(`<div id="html_95b0b48d58778f447c759488bdef8e18" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95509000ZE0144<br>     <b>Date :</b> 2024-11-20<br>     <b>Prix :</b> 3,282,898 €<br>     <b>Surface :</b> 12369 m²<br>     <b>Prix/m² :</b> 265.41 €/m²<br>     <b>Prix marché :</b> 1256.28 €/m²<br>     <b>Écart :</b> 990.87 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_f974acbbc1a6fd51007f580581a76ffe.setContent(html_95b0b48d58778f447c759488bdef8e18);
+                var html_f393b41a97826a8e943e06470c0f6a65 = $(`<div id="html_f393b41a97826a8e943e06470c0f6a65" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95509000ZE0144<br>     <b>Date :</b> 2024-11-20<br>     <b>Prix :</b> 3,282,898 €<br>     <b>Surface :</b> 12369 m²<br>     <b>Prix/m² :</b> 265.41 €/m²<br>     <b>Prix marché :</b> 1256.28 €/m²<br>     <b>Écart :</b> 990.87 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_0e914f89b1faeb5f38381eb106da1138.setContent(html_f393b41a97826a8e943e06470c0f6a65);
             
         
 
-        polygon_3eb6b5efb35f02f252613bb0e43c1aea.bindPopup(popup_f974acbbc1a6fd51007f580581a76ffe)
+        polygon_b887db8eb512a74572f937dbf16e2f1a.bindPopup(popup_0e914f89b1faeb5f38381eb106da1138)
         ;
 
         
     
     
-            var polygon_71b13f8d3966acf364f998d18080aca0 = L.polygon(
+            var circle_marker_39af7dbf844a6b67cbc447addd923a7c = L.circleMarker(
+                [48.62469992421604, 2.421291618514068],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_0be9615d28082872af40d049a214c6b0 = L.polygon(
                 [[48.6246087, 2.4206149], [48.6245726, 2.4206519], [48.6242562, 2.4210004], [48.624259, 2.4210045], [48.6242677, 2.421018], [48.6243187, 2.4210986], [48.6243406, 2.4211324], [48.6243691, 2.4211774], [48.6243888, 2.4212081], [48.6244195, 2.4212564], [48.6244464, 2.421298], [48.6244779, 2.4213473], [48.6245013, 2.4213845], [48.6245792, 2.4215059], [48.6246103, 2.4215552], [48.6246573, 2.4216282], [48.6246894, 2.4216788], [48.6247081, 2.4217076], [48.6247359, 2.4217515], [48.6247932, 2.4218407], [48.6248175, 2.421879], [48.624872, 2.4219643], [48.6249392, 2.4220702], [48.6249725, 2.4221219], [48.6249918, 2.4221511], [48.6250047, 2.4221716], [48.6250112, 2.4221098], [48.6250153, 2.4219469], [48.6250095, 2.4217606], [48.6249945, 2.4215757], [48.6249635, 2.4213554], [48.6249098, 2.4211562], [48.6247517, 2.4208231], [48.6246849, 2.4207078], [48.6246106, 2.420616], [48.6246087, 2.4206149]],
                 {"bubblingMouseEvents": true, "color": "#0bf300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0bf300", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_53b164ca52c274df816175d5bbf73f31 = L.popup({
+        var popup_ba8455927e7e74ee883e9947c8ded491 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_b60d9f57ab5e226caeb3fb7cb0bc484b = $(`<div id="html_b60d9f57ab5e226caeb3fb7cb0bc484b" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 91228182AR0215<br>     <b>Date :</b> 2024-12-12<br>     <b>Prix :</b> 1,920,000 €<br>     <b>Surface :</b> 11340 m²<br>     <b>Prix/m² :</b> 169.31 €/m²<br>     <b>Prix marché :</b> 1245.24 €/m²<br>     <b>Écart :</b> 1075.93 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_53b164ca52c274df816175d5bbf73f31.setContent(html_b60d9f57ab5e226caeb3fb7cb0bc484b);
+                var html_632495a3d212c12656508a07f464d202 = $(`<div id="html_632495a3d212c12656508a07f464d202" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 91228182AR0215<br>     <b>Date :</b> 2024-12-12<br>     <b>Prix :</b> 1,920,000 €<br>     <b>Surface :</b> 11340 m²<br>     <b>Prix/m² :</b> 169.31 €/m²<br>     <b>Prix marché :</b> 1245.24 €/m²<br>     <b>Écart :</b> 1075.93 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_ba8455927e7e74ee883e9947c8ded491.setContent(html_632495a3d212c12656508a07f464d202);
             
         
 
-        polygon_71b13f8d3966acf364f998d18080aca0.bindPopup(popup_53b164ca52c274df816175d5bbf73f31)
+        polygon_0be9615d28082872af40d049a214c6b0.bindPopup(popup_ba8455927e7e74ee883e9947c8ded491)
         ;
 
         
     
     
-            var polygon_b156118ae416fa4ca76758e8eaa34132 = L.polygon(
+            var circle_marker_7cf6ed6004d6b1e886557388847ace2a = L.circleMarker(
+                [48.988397620436324, 1.6641627644980708],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_4800b21ecf01819b7c3ddbf2399dbaff = L.polygon(
                 [[48.9873932, 1.6643345], [48.9892873, 1.6651841], [48.9893764, 1.6645032], [48.9893942, 1.6642893], [48.9891677, 1.6640425], [48.9886253, 1.6635685], [48.9885177, 1.6634939], [48.9884072, 1.6634301], [48.9879239, 1.6632234], [48.9878116, 1.6632083], [48.9877028, 1.6632533], [48.987611, 1.663353], [48.9875476, 1.6634947], [48.9873932, 1.6643345]],
                 {"bubblingMouseEvents": true, "color": "#0bf300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0bf300", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_d90c82ab4032b8f238149aa9f4a93dac = L.popup({
+        var popup_74cfad54b9d850ffe092e1888df2e23f = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_7cd7d6263838724bb52e65075ac1fe96 = $(`<div id="html_7cd7d6263838724bb52e65075ac1fe96" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78118000ZB0112<br>     <b>Date :</b> 2024-03-19<br>     <b>Prix :</b> 5,195,370 €<br>     <b>Surface :</b> 48951 m²<br>     <b>Prix/m² :</b> 106.13 €/m²<br>     <b>Prix marché :</b> 355.13 €/m²<br>     <b>Écart :</b> 249.0 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_d90c82ab4032b8f238149aa9f4a93dac.setContent(html_7cd7d6263838724bb52e65075ac1fe96);
+                var html_5af84a6cdc002d0de9f23a262be70ce3 = $(`<div id="html_5af84a6cdc002d0de9f23a262be70ce3" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78118000ZB0112<br>     <b>Date :</b> 2024-03-19<br>     <b>Prix :</b> 5,195,370 €<br>     <b>Surface :</b> 48951 m²<br>     <b>Prix/m² :</b> 106.13 €/m²<br>     <b>Prix marché :</b> 355.13 €/m²<br>     <b>Écart :</b> 249.0 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_74cfad54b9d850ffe092e1888df2e23f.setContent(html_5af84a6cdc002d0de9f23a262be70ce3);
             
         
 
-        polygon_b156118ae416fa4ca76758e8eaa34132.bindPopup(popup_d90c82ab4032b8f238149aa9f4a93dac)
+        polygon_4800b21ecf01819b7c3ddbf2399dbaff.bindPopup(popup_74cfad54b9d850ffe092e1888df2e23f)
         ;
 
         
     
     
-            var polygon_1e12f0e5ce931f32ef4dae1f3ce5a454 = L.polygon(
+            var circle_marker_9edf42d291ebf831dc657803bb182069 = L.circleMarker(
+                [49.04144693497467, 2.451001015934673],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_96efca62de1de148ebb3bae7af557489 = L.polygon(
                 [[49.0415417, 2.4512188], [49.0414079, 2.4507403], [49.0413516, 2.4507747], [49.0413596, 2.450804], [49.0413605, 2.4508035], [49.0414823, 2.4512582], [49.0415417, 2.4512188]],
                 {"bubblingMouseEvents": true, "color": "#0af400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0af400", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_22c8b85262c6d340fe4746c51640dc53 = L.popup({
+        var popup_eef83d6b5212e095452557d6033e3ec1 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_4a553387190494a0f2be55a2adee2e9b = $(`<div id="html_4a553387190494a0f2be55a2adee2e9b" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95241000ZI0228<br>     <b>Date :</b> 2024-09-26<br>     <b>Prix :</b> 1,755,088 €<br>     <b>Surface :</b> 20910 m²<br>     <b>Prix/m² :</b> 83.94 €/m²<br>     <b>Prix marché :</b> 646.84 €/m²<br>     <b>Écart :</b> 562.91 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_22c8b85262c6d340fe4746c51640dc53.setContent(html_4a553387190494a0f2be55a2adee2e9b);
+                var html_d43818b29ef185504957324ee95c1ea8 = $(`<div id="html_d43818b29ef185504957324ee95c1ea8" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 95241000ZI0228<br>     <b>Date :</b> 2024-09-26<br>     <b>Prix :</b> 1,755,088 €<br>     <b>Surface :</b> 20910 m²<br>     <b>Prix/m² :</b> 83.94 €/m²<br>     <b>Prix marché :</b> 646.84 €/m²<br>     <b>Écart :</b> 562.91 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_eef83d6b5212e095452557d6033e3ec1.setContent(html_d43818b29ef185504957324ee95c1ea8);
             
         
 
-        polygon_1e12f0e5ce931f32ef4dae1f3ce5a454.bindPopup(popup_22c8b85262c6d340fe4746c51640dc53)
+        polygon_96efca62de1de148ebb3bae7af557489.bindPopup(popup_eef83d6b5212e095452557d6033e3ec1)
         ;
 
         
     
     
-            var polygon_e97c1e1ff98b9e744186afb07b002bb5 = L.polygon(
+            var circle_marker_0dd6477a976bd02f5fdacb28296793ca = L.circleMarker(
+                [48.80109177904441, 1.9582299287831286],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_641fab7cc017feeea239fd3355f8cd60 = L.polygon(
                 [[48.8005768, 1.957199], [48.8004808, 1.9577], [48.8004335, 1.9579695], [48.8003718, 1.9583463], [48.8013029, 1.9590912], [48.8013072, 1.9590978], [48.8014199, 1.959088], [48.8015634, 1.9590761], [48.8015831, 1.9590769], [48.8016024, 1.959082], [48.8016211, 1.9590909], [48.8016389, 1.9591036], [48.8016444, 1.9591091], [48.8017911, 1.9584474], [48.8018447, 1.9582258], [48.8005768, 1.957199]],
                 {"bubblingMouseEvents": true, "color": "#09f500", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#09f500", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_73388c0216084dedbf4798e2cd0157eb = L.popup({
+        var popup_dd8666a289c7d796c59bb363b3d69d40 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_8f814f21f268dffde5dda5bcbe7dc448 = $(`<div id="html_8f814f21f268dffde5dda5bcbe7dc448" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78490000BV0092<br>     <b>Date :</b> 2024-12-18<br>     <b>Prix :</b> 3,641,715 €<br>     <b>Surface :</b> 14232 m²<br>     <b>Prix/m² :</b> 255.88 €/m²<br>     <b>Prix marché :</b> 982.2 €/m²<br>     <b>Écart :</b> 726.32 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_73388c0216084dedbf4798e2cd0157eb.setContent(html_8f814f21f268dffde5dda5bcbe7dc448);
+                var html_b3e802f3e7a7d0e137ad3f44b9fd1202 = $(`<div id="html_b3e802f3e7a7d0e137ad3f44b9fd1202" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78490000BV0092<br>     <b>Date :</b> 2024-12-18<br>     <b>Prix :</b> 3,641,715 €<br>     <b>Surface :</b> 14232 m²<br>     <b>Prix/m² :</b> 255.88 €/m²<br>     <b>Prix marché :</b> 982.2 €/m²<br>     <b>Écart :</b> 726.32 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_dd8666a289c7d796c59bb363b3d69d40.setContent(html_b3e802f3e7a7d0e137ad3f44b9fd1202);
             
         
 
-        polygon_e97c1e1ff98b9e744186afb07b002bb5.bindPopup(popup_73388c0216084dedbf4798e2cd0157eb)
+        polygon_641fab7cc017feeea239fd3355f8cd60.bindPopup(popup_dd8666a289c7d796c59bb363b3d69d40)
         ;
 
         
     
     
-            var polygon_a67f074ca1f189d8d5fce65cbf2b7bef = L.polygon(
+            var circle_marker_e3bd478910bff4f952714abb5f22b637 = L.circleMarker(
+                [48.82016858050477, 2.6751963491080213],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_5a91ed6a66a60b67c63726f598ba2b06 = L.polygon(
                 [[48.8196367, 2.6759775], [48.8209284, 2.6755329], [48.8207702, 2.6744785], [48.8207143, 2.674425], [48.8193576, 2.6748929], [48.8196367, 2.6759775]],
                 {"bubblingMouseEvents": true, "color": "#08f600", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#08f600", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_f305dfdbec691cd7e67a11d398cf2df4 = L.popup({
+        var popup_46929ad76d62607041023a9c992de787 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_42c8f4c437e4b2c8917dc6e846792d10 = $(`<div id="html_42c8f4c437e4b2c8917dc6e846792d10" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77146000AM0093<br>     <b>Date :</b> 2024-10-04<br>     <b>Prix :</b> 1,634,472 €<br>     <b>Surface :</b> 12972 m²<br>     <b>Prix/m² :</b> 126.0 €/m²<br>     <b>Prix marché :</b> 852.7 €/m²<br>     <b>Écart :</b> 726.7 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_f305dfdbec691cd7e67a11d398cf2df4.setContent(html_42c8f4c437e4b2c8917dc6e846792d10);
+                var html_16178a0418001de8a7bf0f4abd44b1b4 = $(`<div id="html_16178a0418001de8a7bf0f4abd44b1b4" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77146000AM0093<br>     <b>Date :</b> 2024-10-04<br>     <b>Prix :</b> 1,634,472 €<br>     <b>Surface :</b> 12972 m²<br>     <b>Prix/m² :</b> 126.0 €/m²<br>     <b>Prix marché :</b> 852.7 €/m²<br>     <b>Écart :</b> 726.7 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_46929ad76d62607041023a9c992de787.setContent(html_16178a0418001de8a7bf0f4abd44b1b4);
             
         
 
-        polygon_a67f074ca1f189d8d5fce65cbf2b7bef.bindPopup(popup_f305dfdbec691cd7e67a11d398cf2df4)
+        polygon_5a91ed6a66a60b67c63726f598ba2b06.bindPopup(popup_46929ad76d62607041023a9c992de787)
         ;
 
         
     
     
-            var polygon_2fb6ddb8c531a604ebc534feb30f576f = L.polygon(
+            var circle_marker_5ca277a75043e2ca5349ac1a7054a3df = L.circleMarker(
+                [48.91352809171798, 2.831080175457059],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_aa78ab95feae7197ff571fdff9575107 = L.polygon(
                 [[48.9134985, 2.8308442], [48.9133863, 2.8311748], [48.913563, 2.8313166], [48.9136664, 2.8309798], [48.9136638, 2.8309775], [48.9134985, 2.8308442]],
                 {"bubblingMouseEvents": true, "color": "#06f800", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#06f800", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_ff7cffce3df453bcc7f9023039eaedae = L.popup({
+        var popup_40e90f4ab55879fa8c688aed9b578fcb = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_42339dbfd9fef621d875328ba2f6f805 = $(`<div id="html_42339dbfd9fef621d875328ba2f6f805" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77232000ZF0122<br>     <b>Date :</b> 2024-11-08<br>     <b>Prix :</b> 2,660,000 €<br>     <b>Surface :</b> 38243 m²<br>     <b>Prix/m² :</b> 69.56 €/m²<br>     <b>Prix marché :</b> 257.93 €/m²<br>     <b>Écart :</b> 188.38 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_ff7cffce3df453bcc7f9023039eaedae.setContent(html_42339dbfd9fef621d875328ba2f6f805);
+                var html_8e5459e00877bac92bf593b97fea5426 = $(`<div id="html_8e5459e00877bac92bf593b97fea5426" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77232000ZF0122<br>     <b>Date :</b> 2024-11-08<br>     <b>Prix :</b> 2,660,000 €<br>     <b>Surface :</b> 38243 m²<br>     <b>Prix/m² :</b> 69.56 €/m²<br>     <b>Prix marché :</b> 257.93 €/m²<br>     <b>Écart :</b> 188.38 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_40e90f4ab55879fa8c688aed9b578fcb.setContent(html_8e5459e00877bac92bf593b97fea5426);
             
         
 
-        polygon_2fb6ddb8c531a604ebc534feb30f576f.bindPopup(popup_ff7cffce3df453bcc7f9023039eaedae)
+        polygon_aa78ab95feae7197ff571fdff9575107.bindPopup(popup_40e90f4ab55879fa8c688aed9b578fcb)
         ;
 
         
     
     
-            var polygon_1693fcd2fa27157debb267fec6f8b1a8 = L.polygon(
+            var circle_marker_8df46b6e65c66d3c7fc34e332e53b1b0 = L.circleMarker(
+                [48.689029524760876, 2.2216222688448335],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_400205cd70b9ee2e971154a328e0c27a = L.polygon(
                 [[48.6887234, 2.2214637], [48.6885922, 2.2215796], [48.68868, 2.2217306], [48.6887273, 2.2218086], [48.688715, 2.2218255], [48.6887061, 2.2218442], [48.6887001, 2.2218654], [48.6886972, 2.221888], [48.688697, 2.2219079], [48.6886984, 2.2219415], [48.6886989, 2.2219601], [48.6886995, 2.2219799], [48.6886995, 2.2219929], [48.6887015, 2.2220062], [48.6887053, 2.2220187], [48.6887087, 2.2220262], [48.6887128, 2.2220328], [48.6887165, 2.2220375], [48.6887723, 2.2221196], [48.6888955, 2.2222687], [48.6889321, 2.2223062], [48.6894743, 2.2215452], [48.6893952, 2.2213991], [48.6892167, 2.2210693], [48.689121, 2.220888], [48.6889261, 2.2212535], [48.6887285, 2.2214749], [48.6887234, 2.2214637]],
                 {"bubblingMouseEvents": true, "color": "#05f900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#05f900", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_89e593b80ea97cab9885a7799e14bde8 = L.popup({
+        var popup_1b6186be68efe3f8d0cc14fcfcb58daf = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_2c7d8dd9ca6d2e629e2ce80db8060fe5 = $(`<div id="html_2c7d8dd9ca6d2e629e2ce80db8060fe5" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 91661000AS0073<br>     <b>Date :</b> 2024-11-28<br>     <b>Prix :</b> 6,656,401 €<br>     <b>Surface :</b> 14900 m²<br>     <b>Prix/m² :</b> 446.74 €/m²<br>     <b>Prix marché :</b> 864.91 €/m²<br>     <b>Écart :</b> 418.17 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_89e593b80ea97cab9885a7799e14bde8.setContent(html_2c7d8dd9ca6d2e629e2ce80db8060fe5);
+                var html_4093026e2485b2dab646bccaa16e5156 = $(`<div id="html_4093026e2485b2dab646bccaa16e5156" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 91661000AS0073<br>     <b>Date :</b> 2024-11-28<br>     <b>Prix :</b> 6,656,401 €<br>     <b>Surface :</b> 14900 m²<br>     <b>Prix/m² :</b> 446.74 €/m²<br>     <b>Prix marché :</b> 864.91 €/m²<br>     <b>Écart :</b> 418.17 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_1b6186be68efe3f8d0cc14fcfcb58daf.setContent(html_4093026e2485b2dab646bccaa16e5156);
             
         
 
-        polygon_1693fcd2fa27157debb267fec6f8b1a8.bindPopup(popup_89e593b80ea97cab9885a7799e14bde8)
+        polygon_400205cd70b9ee2e971154a328e0c27a.bindPopup(popup_1b6186be68efe3f8d0cc14fcfcb58daf)
         ;
 
         
     
     
-            var polygon_3a77f1432d07d8665eaa9842af2aef67 = L.polygon(
+            var circle_marker_4ebfb247f4e1a0e1aa23c55ebac5d07d = L.circleMarker(
+                [48.490511049977314, 2.6843595763345065],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_43f638a7ff5f4d71988f13257e5fe452 = L.polygon(
                 [[48.49021, 2.683754], [48.4902059, 2.6837616], [48.4899552, 2.6842264], [48.4896781, 2.6847245], [48.4897013, 2.684751], [48.4902966, 2.6854417], [48.4903933, 2.6855548], [48.4904136, 2.6855765], [48.4904477, 2.6856189], [48.4907017, 2.6851622], [48.4908211, 2.6849472], [48.4909383, 2.6847364], [48.4910554, 2.6845239], [48.4911721, 2.6843181], [48.4912868, 2.6841067], [48.4913366, 2.6840206], [48.4908898, 2.6834622], [48.4905894, 2.6830841], [48.4902147, 2.6837598], [48.49021, 2.683754]],
                 {"bubblingMouseEvents": true, "color": "#05f900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#05f900", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_1bed70e5536102dcd49bd312d68f8e06 = L.popup({
+        var popup_8dc89301e3231463d3926711385b118e = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_a696894f7173a686d43bd6a0a27f72f0 = $(`<div id="html_a696894f7173a686d43bd6a0a27f72f0" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77096000ZE0161<br>     <b>Date :</b> 2024-12-05<br>     <b>Prix :</b> 1,300,000 €<br>     <b>Surface :</b> 17030 m²<br>     <b>Prix/m² :</b> 76.34 €/m²<br>     <b>Prix marché :</b> 426.74 €/m²<br>     <b>Écart :</b> 350.41 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_1bed70e5536102dcd49bd312d68f8e06.setContent(html_a696894f7173a686d43bd6a0a27f72f0);
+                var html_bb14e5e80aae5bd04d0d03da84f2e29e = $(`<div id="html_bb14e5e80aae5bd04d0d03da84f2e29e" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77096000ZE0161<br>     <b>Date :</b> 2024-12-05<br>     <b>Prix :</b> 1,300,000 €<br>     <b>Surface :</b> 17030 m²<br>     <b>Prix/m² :</b> 76.34 €/m²<br>     <b>Prix marché :</b> 426.74 €/m²<br>     <b>Écart :</b> 350.41 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_8dc89301e3231463d3926711385b118e.setContent(html_bb14e5e80aae5bd04d0d03da84f2e29e);
             
         
 
-        polygon_3a77f1432d07d8665eaa9842af2aef67.bindPopup(popup_1bed70e5536102dcd49bd312d68f8e06)
+        polygon_43f638a7ff5f4d71988f13257e5fe452.bindPopup(popup_8dc89301e3231463d3926711385b118e)
         ;
 
         
     
     
-            var polygon_ac9a1faf0b7261415605e493dca54cf2 = L.polygon(
+            var circle_marker_bce00b2bdd5cbd0eac880e5783e182fb = L.circleMarker(
+                [48.8551006742461, 2.747851493055956],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_9b38ba24674e94073920aa6ea34eb95f = L.polygon(
                 [[48.8549882, 2.7468839], [48.8547626, 2.7472813], [48.8546149, 2.7475664], [48.8544836, 2.7478696], [48.8552178, 2.7488266], [48.85573, 2.7478509], [48.8549882, 2.7468839]],
                 {"bubblingMouseEvents": true, "color": "#05f900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#05f900", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_a454b66818718ecf490030fc3de9d483 = L.popup({
+        var popup_95c567d19da4e63f886c3d462c8b8a47 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_39a5060c3971b720c6a50238537946e9 = $(`<div id="html_39a5060c3971b720c6a50238537946e9" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77085000YA0494<br>     <b>Date :</b> 2024-07-02<br>     <b>Prix :</b> 2,472,927 €<br>     <b>Surface :</b> 10025 m²<br>     <b>Prix/m² :</b> 246.68 €/m²<br>     <b>Prix marché :</b> 839.42 €/m²<br>     <b>Écart :</b> 592.74 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_a454b66818718ecf490030fc3de9d483.setContent(html_39a5060c3971b720c6a50238537946e9);
+                var html_2f312e94d5359a6c8f6b2f9d557a2ed1 = $(`<div id="html_2f312e94d5359a6c8f6b2f9d557a2ed1" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77085000YA0494<br>     <b>Date :</b> 2024-07-02<br>     <b>Prix :</b> 2,472,927 €<br>     <b>Surface :</b> 10025 m²<br>     <b>Prix/m² :</b> 246.68 €/m²<br>     <b>Prix marché :</b> 839.42 €/m²<br>     <b>Écart :</b> 592.74 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_95c567d19da4e63f886c3d462c8b8a47.setContent(html_2f312e94d5359a6c8f6b2f9d557a2ed1);
             
         
 
-        polygon_ac9a1faf0b7261415605e493dca54cf2.bindPopup(popup_a454b66818718ecf490030fc3de9d483)
+        polygon_9b38ba24674e94073920aa6ea34eb95f.bindPopup(popup_95c567d19da4e63f886c3d462c8b8a47)
         ;
 
         
     
     
-            var polygon_19fb0db10cfbf16eca677ff5097ca16e = L.polygon(
+            var circle_marker_ae2e85286a68c1b59e3aa7d5b0cc0b5b = L.circleMarker(
+                [48.955084175219845, 2.6651057298433987],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_07487e3babe9e4e23fee23291c705f88 = L.polygon(
                 [[48.9556577, 2.6650733], [48.9556603, 2.6650256], [48.9553761, 2.6650152], [48.9549511, 2.6649944], [48.9547382, 2.6649881], [48.9547244, 2.6654675], [48.9547209, 2.6655887], [48.9547503, 2.665616], [48.9547652, 2.6650429], [48.9549404, 2.6650484], [48.9550894, 2.6650555], [48.9552465, 2.665063], [48.9553229, 2.6650666], [48.9555375, 2.6650773], [48.9556577, 2.6650733]],
                 {"bubblingMouseEvents": true, "color": "#05f900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#05f900", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_75d988458e8dca3229880d6392feb401 = L.popup({
+        var popup_b208081a245716271d85f1fb96af1107 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_f452ff5b3c6a51eac3c64ec81b007afc = $(`<div id="html_f452ff5b3c6a51eac3c64ec81b007afc" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77118000ZA0036<br>     <b>Date :</b> 2024-07-30<br>     <b>Prix :</b> 1,800,000 €<br>     <b>Surface :</b> 14341 m²<br>     <b>Prix/m² :</b> 125.51 €/m²<br>     <b>Prix marché :</b> 510.2 €/m²<br>     <b>Écart :</b> 384.69 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_75d988458e8dca3229880d6392feb401.setContent(html_f452ff5b3c6a51eac3c64ec81b007afc);
+                var html_8c95f88aa7d766ea401a1660721dad76 = $(`<div id="html_8c95f88aa7d766ea401a1660721dad76" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77118000ZA0036<br>     <b>Date :</b> 2024-07-30<br>     <b>Prix :</b> 1,800,000 €<br>     <b>Surface :</b> 14341 m²<br>     <b>Prix/m² :</b> 125.51 €/m²<br>     <b>Prix marché :</b> 510.2 €/m²<br>     <b>Écart :</b> 384.69 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_b208081a245716271d85f1fb96af1107.setContent(html_8c95f88aa7d766ea401a1660721dad76);
             
         
 
-        polygon_19fb0db10cfbf16eca677ff5097ca16e.bindPopup(popup_75d988458e8dca3229880d6392feb401)
+        polygon_07487e3babe9e4e23fee23291c705f88.bindPopup(popup_b208081a245716271d85f1fb96af1107)
         ;
 
         
     
     
-            var polygon_bbc04e0368ca870f2c4c7d69454a167b = L.polygon(
+            var circle_marker_81953286c5d934eb3cb28262e9ffb1d2 = L.circleMarker(
+                [48.98686713634035, 2.6667398947286696],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_b8e4b4b4ee255e28d8caa9e05daf1ff5 = L.polygon(
                 [[48.9863079, 2.6655381], [48.985248, 2.6657843], [48.9855665, 2.6674972], [48.9857529, 2.6684979], [48.9857572, 2.6684964], [48.988429, 2.6675963], [48.988146, 2.6651107], [48.9880294, 2.6651349], [48.9863079, 2.6655381]],
                 {"bubblingMouseEvents": true, "color": "#04fa00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#04fa00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_6a1217b212ba709788ea7531fc2c61cc = L.popup({
+        var popup_cb7e3a1d3b31623f731e7d469011402c = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_a243c40df122ea4394d9648f1ab5f5a5 = $(`<div id="html_a243c40df122ea4394d9648f1ab5f5a5" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77123000ZB0188<br>     <b>Date :</b> 2024-04-25<br>     <b>Prix :</b> 2,388,402 €<br>     <b>Surface :</b> 30651 m²<br>     <b>Prix/m² :</b> 77.92 €/m²<br>     <b>Prix marché :</b> 233.29 €/m²<br>     <b>Écart :</b> 155.37 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_6a1217b212ba709788ea7531fc2c61cc.setContent(html_a243c40df122ea4394d9648f1ab5f5a5);
+                var html_3f3c927f7c0ec5df14ab8b194186ac20 = $(`<div id="html_3f3c927f7c0ec5df14ab8b194186ac20" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77123000ZB0188<br>     <b>Date :</b> 2024-04-25<br>     <b>Prix :</b> 2,388,402 €<br>     <b>Surface :</b> 30651 m²<br>     <b>Prix/m² :</b> 77.92 €/m²<br>     <b>Prix marché :</b> 233.29 €/m²<br>     <b>Écart :</b> 155.37 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_cb7e3a1d3b31623f731e7d469011402c.setContent(html_3f3c927f7c0ec5df14ab8b194186ac20);
             
         
 
-        polygon_bbc04e0368ca870f2c4c7d69454a167b.bindPopup(popup_6a1217b212ba709788ea7531fc2c61cc)
+        polygon_b8e4b4b4ee255e28d8caa9e05daf1ff5.bindPopup(popup_cb7e3a1d3b31623f731e7d469011402c)
         ;
 
         
     
     
-            var polygon_de1c35a5a6b4a45864971f93487be787 = L.polygon(
+            var circle_marker_c2b44166e391b9d7fb332b7f0caf70f9 = L.circleMarker(
+                [48.99106718906835, 1.6687144298417098],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_c35c13b6c2b44ba55a64b0f4ae850950 = L.polygon(
                 [[48.9910471, 1.6684196], [48.9909406, 1.6689557], [48.991085, 1.669001], [48.991196, 1.6684939], [48.9910471, 1.6684196]],
                 {"bubblingMouseEvents": true, "color": "#04fa00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#04fa00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_a51c63793798e16c94d3ebf4bc20d2ea = L.popup({
+        var popup_97038e8a1118b10d9a053bee5e300af1 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_24f72fedbfe472287b4a09a5764a9f49 = $(`<div id="html_24f72fedbfe472287b4a09a5764a9f49" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78118000ZA0043<br>     <b>Date :</b> 2024-12-20<br>     <b>Prix :</b> 2,626,008 €<br>     <b>Surface :</b> 19894 m²<br>     <b>Prix/m² :</b> 132.0 €/m²<br>     <b>Prix marché :</b> 355.13 €/m²<br>     <b>Écart :</b> 223.13 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_a51c63793798e16c94d3ebf4bc20d2ea.setContent(html_24f72fedbfe472287b4a09a5764a9f49);
+                var html_5fb4ae2f2af406f3f32194aca43a2271 = $(`<div id="html_5fb4ae2f2af406f3f32194aca43a2271" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78118000ZA0043<br>     <b>Date :</b> 2024-12-20<br>     <b>Prix :</b> 2,626,008 €<br>     <b>Surface :</b> 19894 m²<br>     <b>Prix/m² :</b> 132.0 €/m²<br>     <b>Prix marché :</b> 355.13 €/m²<br>     <b>Écart :</b> 223.13 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_97038e8a1118b10d9a053bee5e300af1.setContent(html_5fb4ae2f2af406f3f32194aca43a2271);
             
         
 
-        polygon_de1c35a5a6b4a45864971f93487be787.bindPopup(popup_a51c63793798e16c94d3ebf4bc20d2ea)
+        polygon_c35c13b6c2b44ba55a64b0f4ae850950.bindPopup(popup_97038e8a1118b10d9a053bee5e300af1)
         ;
 
         
     
     
-            var polygon_8172005c174eff7ee1996b837cade81a = L.polygon(
+            var circle_marker_7e4fd21c5c61db34661c9a6773e8a2d2 = L.circleMarker(
+                [48.98355242901506, 2.6352128359107363],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_04d79042eff68c5bd576e37988aca795 = L.polygon(
                 [[48.983253, 2.6365031], [48.9843706, 2.6357926], [48.9840548, 2.6346331], [48.9838614, 2.6339314], [48.9828036, 2.634606], [48.9826238, 2.6342079], [48.9828893, 2.635174], [48.983253, 2.6365031]],
                 {"bubblingMouseEvents": true, "color": "#03fb00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#03fb00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_712053a6286c79e1aef7f4272f899041 = L.popup({
+        var popup_d4f0ac9bca2bb596dd4f82b714a202ba = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_f80d1033cc2e94166ffa9902233dd49d = $(`<div id="html_f80d1033cc2e94166ffa9902233dd49d" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77294000BK0070<br>     <b>Date :</b> 2024-11-26<br>     <b>Prix :</b> 9,600,000 €<br>     <b>Surface :</b> 20000 m²<br>     <b>Prix/m² :</b> 480.0 €/m²<br>     <b>Prix marché :</b> 697.09 €/m²<br>     <b>Écart :</b> 217.09 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_712053a6286c79e1aef7f4272f899041.setContent(html_f80d1033cc2e94166ffa9902233dd49d);
+                var html_70067d50dba5a6be9fe086f5a654533b = $(`<div id="html_70067d50dba5a6be9fe086f5a654533b" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 77294000BK0070<br>     <b>Date :</b> 2024-11-26<br>     <b>Prix :</b> 9,600,000 €<br>     <b>Surface :</b> 20000 m²<br>     <b>Prix/m² :</b> 480.0 €/m²<br>     <b>Prix marché :</b> 697.09 €/m²<br>     <b>Écart :</b> 217.09 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_d4f0ac9bca2bb596dd4f82b714a202ba.setContent(html_70067d50dba5a6be9fe086f5a654533b);
             
         
 
-        polygon_8172005c174eff7ee1996b837cade81a.bindPopup(popup_712053a6286c79e1aef7f4272f899041)
+        polygon_04d79042eff68c5bd576e37988aca795.bindPopup(popup_d4f0ac9bca2bb596dd4f82b714a202ba)
         ;
 
         
     
     
-            var polygon_04d370b23f842ce5c07d51cc4622aa16 = L.polygon(
+            var circle_marker_0ea14650d01b37d17cf57cdceec8a1b4 = L.circleMarker(
+                [48.65083474550872, 2.3884578053489327],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_071db22c28fed6762694d3f19be59980 = L.polygon(
                 [[48.6506626, 2.3880648], [48.6506536, 2.388091], [48.6510106, 2.3888575], [48.6510191, 2.3888328], [48.6506626, 2.3880648]],
                 {"bubblingMouseEvents": true, "color": "#03fb00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#03fb00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_bd4edfac571917bbf552a4f144b7f54c = L.popup({
+        var popup_e3ff580a76b153c039acb2725e133cd8 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_2f2be215e7d596e3d0b53ce50afc615f = $(`<div id="html_2f2be215e7d596e3d0b53ce50afc615f" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 91286000AN0234<br>     <b>Date :</b> 2024-12-20<br>     <b>Prix :</b> 1,950,576 €<br>     <b>Surface :</b> 10922 m²<br>     <b>Prix/m² :</b> 178.59 €/m²<br>     <b>Prix marché :</b> 495.69 €/m²<br>     <b>Écart :</b> 317.1 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_bd4edfac571917bbf552a4f144b7f54c.setContent(html_2f2be215e7d596e3d0b53ce50afc615f);
+                var html_33171164d215fd653f3b741329e48ba9 = $(`<div id="html_33171164d215fd653f3b741329e48ba9" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 91286000AN0234<br>     <b>Date :</b> 2024-12-20<br>     <b>Prix :</b> 1,950,576 €<br>     <b>Surface :</b> 10922 m²<br>     <b>Prix/m² :</b> 178.59 €/m²<br>     <b>Prix marché :</b> 495.69 €/m²<br>     <b>Écart :</b> 317.1 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_e3ff580a76b153c039acb2725e133cd8.setContent(html_33171164d215fd653f3b741329e48ba9);
             
         
 
-        polygon_04d370b23f842ce5c07d51cc4622aa16.bindPopup(popup_bd4edfac571917bbf552a4f144b7f54c)
+        polygon_071db22c28fed6762694d3f19be59980.bindPopup(popup_e3ff580a76b153c039acb2725e133cd8)
         ;
 
         
     
     
-            var polygon_7fc4e316f017ce14338305606d467bb5 = L.polygon(
+            var circle_marker_b17f0c7b8a7594c07b4f54c8c60c275d = L.circleMarker(
+                [48.98600884381704, 1.7568545380076475],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "yellow", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20, "stroke": true, "weight": 3}
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
+        
+    
+            var polygon_81918ac5445eb12b09f750b43fc56f7f = L.polygon(
                 [[48.9865115, 1.7565687], [48.9858757, 1.7559997], [48.9854587, 1.7570754], [48.9858885, 1.7574428], [48.9862143, 1.7577172], [48.9865115, 1.7565687]],
                 {"bubblingMouseEvents": true, "color": "#01fd00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01fd00", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 2}
-            ).addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            ).addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
     
-        var popup_19143d70bbb4891d21dfe124ed3a70ff = L.popup({
+        var popup_55bd24c16236045e5a9e33ac9aabc7f4 = L.popup({
   "maxWidth": 400,
 });
 
         
             
-                var html_c60be4e3f7e969fec70c3e0ee9d2505b = $(`<div id="html_c60be4e3f7e969fec70c3e0ee9d2505b" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78335000BH0061<br>     <b>Date :</b> 2024-07-02<br>     <b>Prix :</b> 3,487,504 €<br>     <b>Surface :</b> 11634 m²<br>     <b>Prix/m² :</b> 299.77 €/m²<br>     <b>Prix marché :</b> 484.96 €/m²<br>     <b>Écart :</b> 185.19 €/m²<br>     <b>Nature :</b>      </div>`)[0];
-                popup_19143d70bbb4891d21dfe124ed3a70ff.setContent(html_c60be4e3f7e969fec70c3e0ee9d2505b);
+                var html_d6dbb47013a468154b952547caefab12 = $(`<div id="html_d6dbb47013a468154b952547caefab12" style="width: 100.0%; height: 100.0%;">     <b>Parcelle :</b> 78335000BH0061<br>     <b>Date :</b> 2024-07-02<br>     <b>Prix :</b> 3,487,504 €<br>     <b>Surface :</b> 11634 m²<br>     <b>Prix/m² :</b> 299.77 €/m²<br>     <b>Prix marché :</b> 484.96 €/m²<br>     <b>Écart :</b> 185.19 €/m²<br>     <b>Nature :</b>      </div>`)[0];
+                popup_55bd24c16236045e5a9e33ac9aabc7f4.setContent(html_d6dbb47013a468154b952547caefab12);
             
         
 
-        polygon_7fc4e316f017ce14338305606d467bb5.bindPopup(popup_19143d70bbb4891d21dfe124ed3a70ff)
+        polygon_81918ac5445eb12b09f750b43fc56f7f.bindPopup(popup_55bd24c16236045e5a9e33ac9aabc7f4)
         ;
 
         
     
     
-            tile_layer_589917ad3586a3cea684889ba44c50d0.addTo(map_558ca5297fc6c3941d76c515333f2d49);
+            tile_layer_60606d992517488a2de3427ad2049009.addTo(map_ede10bab4d66221a28a1f6ec4965c2d6);
         
 </script>
 </html>

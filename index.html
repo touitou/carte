@@ -1,1067 +1,283 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>ImmoQuantum – Cartographie intelligente des opportunités immobilières</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="ImmoQuantum transforme les données publiques en une carte d’opportunités immobilières, avec score d’écart de prix et future intégration IA pour brokers et foncières.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ImmoQuantum – Radar d’opportunités foncières</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #020617;
-      --bg-soft: #020817;
-      --bg-card: #020617;
-      --accent: #22d3ee;
-      --accent-soft: rgba(34, 211, 238, 0.16);
-      --accent-strong: #06b6d4;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border-soft: rgba(148, 163, 184, 0.35);
-      --danger: #f97373;
+      --bg: #f9f9fb;
+      --surface: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5f6368;
+      --accent: #4f7cff;
+      --accent-hover: #365ed9;
+      --border: #e0e0e0;
     }
 
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0b1220 0%, #020617 45%, #020617 100%);
-      color: var(--text);
-      scroll-behavior: smooth;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .shell {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem 3rem;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(2,6,23,0.95), rgba(2,6,23,0.75), transparent);
-      border-bottom: 1px solid rgba(148,163,184,0.25);
-    }
-
-    .nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
+      padding: 1.5rem 2rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-bottom: 1px solid var(--border);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .logo {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.5);
-      background: radial-gradient(circle at 20% 20%, var(--accent), #0ea5e9 35%, #1d1b4b 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #ecfeff;
-      box-shadow: 0 0 25px rgba(34,211,238,0.5);
-    }
-
-    .brand-text-title {
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      font-size: 1rem;
-    }
-
-    .brand-text-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      padding: 0.25rem 0.5rem;
-      border-radius: 999px;
-      transition: color 0.2s ease, background 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(15,23,42,0.8);
-      color: var(--accent);
-    }
-
-    .nav-cta {
-      display: flex;
-      gap: 0.5rem;
       align-items: center;
     }
 
-    .pill-beta {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.7);
-      color: var(--muted);
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.45rem 1.1rem;
-      font-size: 0.85rem;
-      border: 1px solid transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-strong), #7dd3fc);
-      color: #0f172a;
-      font-weight: 600;
-      box-shadow: 0 18px 40px rgba(8,47,73,0.65);
-    }
-
-    .btn-outline {
-      color: var(--muted);
-      border-color: rgba(148,163,184,0.6);
-      background: rgba(15,23,42,0.9);
-    }
-
-    /* Hero */
-
-    .hero {
-      padding-top: 3rem;
-      padding-bottom: 2.5rem;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .eyebrow span.badge {
-      padding: 0.15rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(148,163,184,0.7);
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
-
-    .hero-title {
-      font-size: clamp(2.3rem, 4vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-title span {
-      background: linear-gradient(135deg, var(--accent), #a5b4fc);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 1.4rem;
-    }
-
-    .hero-subtitle strong {
-      color: #e5e7eb;
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
       font-weight: 500;
     }
 
-    .hero-ctas {
+    .hero {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: var(--surface);
     }
 
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.8rem;
+    .hero img {
+      max-width: 480px;
+      margin: 2rem auto;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 700px;
       color: var(--muted);
+      font-size: 1.1rem;
     }
 
-    .hero-meta-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.22rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.85);
-      border: 1px solid rgba(31,41,55,0.9);
+    a.btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 2rem;
+      text-decoration: none;
+      transition: background 0.2s;
     }
 
-    .hero-card {
-      position: relative;
-      border-radius: 1.25rem;
-      padding: 1.5rem 1.5rem 1.2rem;
-      background: radial-gradient(circle at top left, rgba(34,211,238,0.16), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(129,140,248,0.1), transparent 60%),
-                  linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(15,23,42,0.98));
-      border: 1px solid rgba(148,163,184,0.35);
-      box-shadow:
-        0 30px 80px rgba(15,23,42,0.9),
-        0 0 0 1px rgba(15,23,42,0.8);
-      overflow: hidden;
-    }
-
-    .hero-chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .chip {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148,163,184,0.5);
-      color: var(--muted);
-      background: rgba(15,23,42,0.9);
-    }
-
-    .hero-map-preview {
-      margin-top: 0.5rem;
-      border-radius: 0.9rem;
-      border: 1px solid rgba(148,163,184,0.45);
-      background: radial-gradient(circle at 10% 0, rgba(34,211,238,0.3), transparent 55%),
-                  radial-gradient(circle at 80% 100%, rgba(96,165,250,0.18), transparent 55%),
-                  #020617;
-      padding: 0.75rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-map-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
-
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(34,211,238,0.35);
-    }
-
-    .hero-map-grid {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 3px;
-      margin-bottom: 0.5rem;
-    }
-
-    .cell {
-      aspect-ratio: 1 / 1;
-      border-radius: 4px;
-      background: radial-gradient(circle at 30% 0, rgba(15,23,42,0.5), #020617);
-      border: 1px solid rgba(30,64,175,0.8);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cell-hot {
-      background: radial-gradient(circle at 30% 0, rgba(248,250,252,0.7), #0f172a 60%);
-      border-color: rgba(252,165,165,0.85);
-      box-shadow: 0 0 16px rgba(252,165,165,0.5);
-    }
-
-    .cell-hot::after {
-      content: "";
-      position: absolute;
-      inset: 35%;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(248,250,252,0.85), rgba(248,113,113,0.15));
-    }
-
-    .map-legend {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .legend-scale {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    .legend-box {
-      width: 28px;
-      height: 6px;
-      border-radius: 999px;
-      background: linear-gradient(to right, #22c55e, #fde047, #fb923c, #ef4444);
-    }
-
-    .hero-card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 0.8rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .hero-badge {
-      font-size: 0.7rem;
-      padding: 0.18rem 0.55rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: #ccfbf1;
-      border: 1px solid rgba(34,211,238,0.6);
-    }
-
-    .hero-card-footer a {
-      font-size: 0.8rem;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    .hero-card-footer a span.arrow {
-      font-size: 0.85rem;
-    }
-
-    /* Sections */
-
-    main {
-      flex: 1;
+    a.btn:hover {
+      background-color: var(--accent-hover);
     }
 
     section {
-      margin-top: 1.25rem;
+      max-width: 960px;
+      margin: auto;
+      padding: 4rem 1.5rem;
     }
 
-    .section-card {
-      border-radius: 1.1rem;
-      padding: 1.5rem 1.6rem;
-      background: linear-gradient(to bottom right, rgba(15,23,42,0.98), rgba(15,23,42,0.96));
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 20px 60px rgba(15,23,42,0.9);
-      margin-bottom: 1.2rem;
-    }
-
-    .section-title {
-      font-size: 1.25rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-sub {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .feature {
-      border-radius: 0.9rem;
-      padding: 0.9rem 1rem;
-      background: rgba(15,23,42,0.95);
-      border: 1px solid rgba(55,65,81,0.9);
-      font-size: 0.85rem;
+    .card {
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
 
-    .feature-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
+    .card strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
     }
 
-    .feature-tag {
-      font-size: 0.7rem;
+    .card p {
       color: var(--muted);
-      margin-bottom: 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
+      font-size: 1rem;
     }
 
-    .feature p {
-      margin: 0;
-      color: var(--muted);
+    ul {
+      list-style: none;
+      padding-left: 1rem;
     }
 
-    .step-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
-      font-size: 0.85rem;
-    }
-
-    .step-item {
-      border-radius: 0.85rem;
-      padding: 0.85rem 0.95rem;
-      background: rgba(15,23,42,0.96);
-      border: 1px solid rgba(55,65,81,0.9);
-      position: relative;
-    }
-
-    .step-index {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      background: rgba(15,23,42,1);
-      border: 1px solid rgba(148,163,184,0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      color: var(--muted);
-      margin-bottom: 0.35rem;
-    }
-
-    .step-title {
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .step-item p {
-      margin: 0;
+    ul li {
+      margin-bottom: 1rem;
       color: var(--muted);
     }
 
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      font-size: 0.75rem;
-      margin-top: 0.4rem;
-    }
-
-    .tiny-pill {
-      padding: 0.12rem 0.5rem;
-      border-radius: 999px;
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(75,85,99,0.9);
-      color: var(--muted);
-    }
-
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.9rem;
-      font-size: 0.83rem;
-    }
-
-    .timeline-item {
-      border-radius: 0.85rem;
-      padding: 0.85rem 0.95rem;
-      background: rgba(15,23,42,0.96);
-      border: 1px solid rgba(55,65,81,0.9);
-    }
-
-    .timeline-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
-    .timeline-title {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-      font-size: 0.9rem;
-    }
-
-    .usecase-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
-      font-size: 0.85rem;
-    }
-
-    .usecase {
-      border-radius: 0.85rem;
-      padding: 0.9rem 1rem;
-      background: rgba(15,23,42,0.98);
-      border: 1px solid rgba(55,65,81,0.9);
-    }
-
-    .usecase h3 {
-      margin: 0 0 0.25rem;
-      font-size: 0.92rem;
-    }
-
-    .usecase small {
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1rem;
-      font-size: 0.85rem;
-    }
-
-    .faq-item {
-      border-radius: 0.85rem;
-      padding: 0.7rem 0.9rem;
-      background: rgba(15,23,42,0.98);
-      border: 1px solid rgba(55,65,81,0.9);
-      margin-bottom: 0.4rem;
-    }
-
-    .faq-q {
-      font-weight: 600;
-      font-size: 0.88rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .faq-a {
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .cta-final {
+    #cta {
       text-align: center;
-      padding: 1.4rem 1.5rem 1.6rem;
-      border-radius: 1rem;
-      background: radial-gradient(circle at top, rgba(34,211,238,0.22), transparent 60%),
-                  linear-gradient(to bottom right, #020617, #020617);
-      border: 1px solid rgba(148,163,184,0.4);
-      margin-top: 0.5rem;
+      padding: 4rem 1.5rem;
+      background-color: var(--surface);
+      border-top: 1px solid var(--border);
     }
 
-    .cta-final h2 {
-      margin: 0 0 0.35rem;
-      font-size: 1.3rem;
+    #contact {
+      background-color: var(--bg);
+      padding: 4rem 1.5rem;
     }
 
-    .cta-final p {
-      margin: 0 0 0.9rem;
-      font-size: 0.9rem;
-      color: var(--muted);
+    #contact form {
+      max-width: 600px;
+      margin: auto;
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
 
-    .cta-final .btn-primary {
-      padding-inline: 1.6rem;
-    }
-
-    .cta-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 0.4rem;
+    #contact input,
+    #contact textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 1rem;
     }
 
     footer {
-      border-top: 1px solid rgba(31,41,55,0.9);
-      padding: 0.9rem 1.5rem 1.4rem;
-      font-size: 0.78rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
       color: var(--muted);
-      display: flex;
-      justify-content: center;
     }
 
-    /* Responsive */
+    @media (min-width: 800px) {
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-    @media (max-width: 900px) {
       .hero {
-        grid-template-columns: minmax(0, 1fr);
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
       }
-    }
 
-    @media (max-width: 780px) {
-      .nav-links {
-        display: none;
-      }
-      .nav {
-        padding-inline: 1.1rem;
-      }
-      .shell {
-        padding-inline: 1.1rem;
-      }
-      .hero {
-        padding-top: 2.2rem;
-      }
-      .hero-card {
-        order: -1;
-      }
-      .grid-3,
-      .step-list,
-      .timeline,
-      .usecase-grid,
-      .faq-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-ctas {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .hero {
-        padding-bottom: 1.8rem;
+      .hero .text {
+        max-width: 540px;
       }
     }
   </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo">IQ</div>
-      <div>
-        <div class="brand-text-title">ImmoQuantum</div>
-        <div class="brand-text-sub">Cartographie intelligente des opportunités</div>
-      </div>
-    </div>
-    <nav class="nav-links">
-      <a href="#aujourdhui">Produit</a>
-      <a href="#comment">Méthode</a>
-      <a href="#vision">Vision IA</a>
-      <a href="#pour-qui">Pour qui</a>
-      <a href="#demo">Démo</a>
+  <header>
+    ImmoQuantum
+    <nav>
+      <a href="#features">Fonctionnalités</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <div class="nav-cta">
-      <span class="pill-beta">Beta privée</span>
-      <a class="btn btn-primary" href="map.html">
-        Accéder à la carte
-        <span>↗</span>
-      </a>
-    </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <div class="shell">
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <div class="eyebrow">
-          <span class="badge">Données publiques • DVF</span>
-          Assistant big data pour l’immobilier
-        </div>
-        <h1 class="hero-title">
-          La carte qui révèle les
-          <span>opportunités cachées</span>
-          avant le marché.
-        </h1>
-        <p class="hero-subtitle">
-          ImmoQuantum transforme les données foncières et les transactions (DVF, etc.)
-          en une carte d’<strong>opportunités immobilières scorées</strong>.
-          Aujourd’hui&nbsp;: écart de prix au m². Demain&nbsp;: agents IA qui
-          préparent votre prospection et s’intègrent à votre CRM.
-        </p>
-        <div class="hero-ctas">
-          <!-- TODO: remplace "map.html" par l'URL réelle de ta carte -->
-          <a href="map.html" class="btn btn-primary">
-            Ouvrir la carte ImmoQuantum
-            <span>↗</span>
-          </a>
-          <a href="#demo" class="btn btn-outline">
-            Voir le flux complet d’une opportunité
-          </a>
-        </div>
-        <div class="hero-meta">
-          <div class="hero-meta-item">Score basé sur les transactions réelles</div>
-          <div class="hero-meta-item">Pensé pour brokers, foncières et marchands</div>
-          <div class="hero-meta-item">Architecture prête pour les agents IA (MCP)</div>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="hero-chip-row">
-          <span class="chip">Carte des écarts de prix</span>
-          <span class="chip">Analyse par parcelle</span>
-          <span class="chip">Prête pour l’IA</span>
-        </div>
-
-        <div class="hero-map-preview">
-          <div class="hero-map-header">
-            <span>Zone test – Vue opportunités</span>
-            <div style="display:flex;align-items:center;gap:0.4rem;">
-              <span class="pulse-dot"></span>
-              <span>Score en temps réel</span>
-            </div>
-          </div>
-          <div class="hero-map-grid">
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell-hot"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell-hot"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-
-            <div class="cell"></div>
-            <div class="cell-hot"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell-hot"></div>
-            <div class="cell"></div>
-
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-
-            <div class="cell"></div>
-            <div class="cell-hot"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-          </div>
-          <div class="map-legend">
-            <div class="legend-scale">
-              <span class="legend-box"></span>
-              <span>Score d’opportunité (écart observé vs zone)</span>
-            </div>
-            <span>Vert : conforme • Rouge : atypique</span>
-          </div>
-        </div>
-
-        <div class="hero-card-footer">
-          <div>
-            <span class="hero-badge">Beta – données réelles</span>
-          </div>
-          <a href="map.html">
-            Lancer la démo carte
-            <span class="arrow">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 1 : AUJOURD'HUI -->
-    <section id="aujourdhui" class="section-card">
-      <h2 class="section-title">Ce que fait ImmoQuantum aujourd’hui</h2>
-      <p class="section-sub">
-        Une carte opérationnelle qui <strong>explore les données publiques</strong> et signale
-        les parcelles dont le prix au m² diverge franchement de leur environnement.
-      </p>
-      <div class="grid-3">
-        <div class="feature">
-          <div class="feature-tag">Données</div>
-          <div class="feature-title">Transactions & foncier</div>
-          <p>
-            Ingestion et nettoyage des données publiques (transactions,
-            parcelles, foncier). Alignement géographique et par zone
-            pour rendre les comparaisons pertinentes.
-          </p>
-        </div>
-        <div class="feature">
-          <div class="feature-tag">Scoring</div>
-          <div class="feature-title">Score d’écart de prix au m²</div>
-          <p>
-            Pour chaque opportunité, calcul d’un <strong>écart au prix de
-            référence</strong> de la zone (moyenne/médiane), converti en score
-            lisible par les équipes commerciales.
-          </p>
-        </div>
-        <div class="feature">
-          <div class="feature-tag">Cartographie</div>
-          <div class="feature-title">Carte des opportunités</div>
-          <p>
-            Visualisation sur carte des points et parcelles à fort potentiel.
-            Un clic ouvre une fiche synthèse : prix, surface, écart estimé,
-            contexte local, informations propriétaires (quand disponible).
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2 : COMMENT -->
-    <section id="comment" class="section-card">
-      <h2 class="section-title">Comment ça marche&nbsp;?</h2>
-      <p class="section-sub">
-        Du brut au ciblé&nbsp;: un flux simple en 3 étapes, conçu pour
-        être <strong>compréhensible par un broker</strong>, pas seulement par un data scientist.
-      </p>
-      <div class="step-list">
-        <div class="step-item">
-          <div class="step-index">1</div>
-          <div class="step-title">Ingestion & structuration</div>
-          <p>
-            Import des données publiques (DVF & co), harmonisation des identifiants,
-            création de zones homogènes, jointure avec les parcelles.
-          </p>
-          <div class="pill-row">
-            <span class="tiny-pill">DVF</span>
-            <span class="tiny-pill">Parcelles</span>
-            <span class="tiny-pill">Zonage cohérent</span>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-index">2</div>
-          <div class="step-title">Calcul du score d’opportunité</div>
-          <p>
-            Pour chaque point&nbsp;: comparaison au marché local,
-            calcul d’un <strong>écart chiffré</strong> et d’un score qui
-            classe les opportunités par priorité de travail.
-          </p>
-          <div class="pill-row">
-            <span class="tiny-pill">Écart au m²</span>
-            <span class="tiny-pill">Score unique</span>
-          </div>
-        </div>
-        <div class="step-item">
-          <div class="step-index">3</div>
-          <div class="step-title">Projection sur la carte</div>
-          <p>
-            Rendu cartographique interactif&nbsp;: zones “calmes”,
-            points atypiques, cluster de signaux. Vous savez où concentrer votre énergie.
-          </p>
-          <div class="pill-row">
-            <span class="tiny-pill">Carte web</span>
-            <span class="tiny-pill">Filtrage</span>
-            <span class="tiny-pill">Exploration rapide</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3 : VISION -->
-    <section id="vision" class="section-card">
-      <h2 class="section-title">Vision : du score aux agents IA</h2>
-      <p class="section-sub">
-        La carte est la première étape. L’objectif d’ImmoQuantum est de devenir un
-        <strong>assistant big data</strong> branché sur vos outils&nbsp;:
-        agents IA, prospection, intégration CRM.
-      </p>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-label">Étape 1</div>
-          <div class="timeline-title">Carte & scoring</div>
-          <p>
-            Score d’écart de prix par opportunité, filtrage par zone, type,
-            surface, budget. C’est l’état actuel de la beta.
-          </p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-label">Étape 2</div>
-          <div class="timeline-title">Listes de prospection</div>
-          <p>
-            Agents IA (MCP) qui transforment les opportunités scorées en
-            <strong>listes de prospection</strong> prêtes à être travaillées
-            par vos équipes.
-          </p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-label">Étape 3</div>
-          <div class="timeline-title">Scripts & scénarios</div>
-          <p>
-            Génération de scripts de prise de contact,
-            arguments adaptés à la zone, pré-qualification des dossiers
-            pour gagner du temps sur chaque appel.
-          </p>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-label">Étape 4</div>
-          <div class="timeline-title">Intégration CRM & workflow</div>
-          <p>
-            Connexion à vos CRM (HubSpot, Pipedrive, Sellsy, etc.),
-            suivi des opportunités, relances suggérées, priorisation dynamique.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4 : POUR QUI -->
-    <section id="pour-qui" class="section-card">
-      <h2 class="section-title">Pour qui&nbsp;?</h2>
-      <p class="section-sub">
-        ImmoQuantum s’adresse aux acteurs qui ont besoin de <strong>voir avant les autres</strong>
-        où sont les dossiers intéressants, et de concentrer leur temps là où l’asymétrie d’information est forte.
-      </p>
-      <div class="usecase-grid">
-        <div class="usecase">
-          <h3>Brokers & courtiers</h3>
-          <small>Conseil & intermédiation</small>
-          <p>
-            Repérer en quelques minutes les zones et les parcelles à creuser
-            avant même qu’elles n’apparaissent dans les listings classiques.
-          </p>
-        </div>
-        <div class="usecase">
-          <h3>Foncières & investisseurs</h3>
-          <small>Vue portefeuille & territoire</small>
-          <p>
-            Analyser de larges zones, identifier des poches d’inefficience,
-            prioriser les secteurs et industrialiser la recherche d’opportunités.
-          </p>
-        </div>
-        <div class="usecase">
-          <h3>Marchands de biens & promoteurs</h3>
-          <small>Création de valeur</small>
-          <p>
-            Cibler les parcelles où le potentiel de reconfiguration
-            (division, changement d’usage, densification) est le plus rentable.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5 : DEMO / FAQ -->
-    <section id="demo" class="section-card">
-      <h2 class="section-title">Un flux concret : de la carte à l’action</h2>
-      <p class="section-sub">
-        Exemple simplifié du parcours utilisateur dans la beta actuelle.
-      </p>
-      <div class="faq-grid">
-        <div>
-          <div class="faq-item">
-            <div class="faq-q">1. Vous ouvrez la carte ImmoQuantum</div>
-            <p class="faq-a">
-              Sélection d’une zone (ville, secteur, quartier),
-              zoom sur les parcelles, filtrage par budget, surface, type de bien.
-            </p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">2. Vous repérez les signaux forts</div>
-            <p class="faq-a">
-              Les parcelles à score élevé apparaissent visuellement.
-              Un clic affiche l’écart estimé au marché local et les principales caractéristiques.
-            </p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">3. Vous ouvrez la fiche opportunité</div>
-            <p class="faq-a">
-              Prix, surface, année, contexte de la zone, historique des transactions,
-              informations propriétaires quand disponibles.
-            </p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">4. Demain : envoi vers un agent IA</div>
-            <p class="faq-a">
-              L’agent IA prend le relais&nbsp;: génération de liste de prospects,
-              rédaction d’un premier contact, classification dans votre CRM.
-            </p>
-          </div>
-        </div>
-        <div>
-          <div class="faq-item">
-            <div class="faq-q">Est-ce déjà connecté à mon CRM&nbsp;?</div>
-            <p class="faq-a">
-              Pas encore. La beta se concentre sur la qualité du score et de la carte.
-              L’intégration CRM est prévue dans la seconde phase avec les premiers partenaires.
-            </p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">Les données sont-elles uniquement DVF&nbsp;?</div>
-            <p class="faq-a">
-              Le cœur actuel repose sur les données publiques françaises, dont la DVF.
-              L’architecture est pensée pour accueillir d’autres sources (autres pays, données internes).
-            </p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">Peut-on tester sur une zone précise&nbsp;?</div>
-            <p class="faq-a">
-              Oui. La beta vise quelques zones pilotes pour ajuster les scores
-              aux réalités terrain avec des professionnels de l’immobilier.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINALE -->
-    <section class="cta-final">
-      <h2>Accéder dès maintenant à la carte ImmoQuantum</h2>
+  <section class="hero">
+    <div class="text">
+      <h1>Radar d’opportunités foncières pour professionnels exigeants</h1>
       <p>
-        La carte est déjà fonctionnelle sur un périmètre pilote.
-        Vous pouvez l’ouvrir, explorer les zones et commencer à repérer vos propres signaux.
+        ImmoQuantum transforme les données publiques (DVF, foncier, cadastre) en signaux concrets — un score d’écart de prix par parcelle, positionné par rapport au marché local.
+        Le résultat : une carte interactive, sobre et claire, pour repérer immédiatement les biens sous-évalués et prioriser vos actions.
       </p>
-      <a href="map.html" class="btn btn-primary">
-        Ouvrir la carte ImmoQuantum
-        <span>↗</span>
-      </a>
-      <div class="cta-note">
-        Pour devenir partenaire beta (brokers, foncières, marchands)&nbsp;:
-        écrivez à <a href="mailto:contact@immoquantum.dev">contact@immoquantum.dev</a>
-        (adresse à adapter).
+      <a href="map.html" class="btn">Accéder à la carte</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Fonctionnalités clés</h2>
+    <div class="grid-3">
+      <div class="card">
+        <strong>Analyse Big Data immobilière</strong>
+        <p>Agrégation automatique des données DVF, cadastrales et foncières. Des millions d’enregistrements analysés pour créer une base exhaustive.</p>
       </div>
-    </section>
-  </div>
-</main>
+      <div class="card">
+        <strong>Scoring parcellaire précis</strong>
+        <p>Calcul d’un écart de valeur au m², comparatif local, pour attribuer un score d’opportunité fiable à chaque parcelle.</p>
+      </div>
+      <div class="card">
+        <strong>Visualisation claire & immédiate</strong>
+        <p>Carte interactive — design épuré — qui met en lumière les zones et parcelles avec le meilleur potentiel, sans surcharge d’information.</p>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  <span>&copy; <span id="year"></span> ImmoQuantum – Projet en développement. Données publiques, scoring & IA pour l’immobilier.</span>
-</footer>
+  <section id="status-vision">
+    <h2>Statut actuel & vision</h2>
+    <ul>
+      <li>✔ Carte interactive opérationnelle sur une zone pilote</li>
+      <li>✔ Scoring dynamique fondé sur des données réelles</li>
+      <li>✔ Filtres pertinents : zone géographique, typologie, budget</li>
+      <li>→ Vision : agents IA générant automatiquement vos listes de prospection et relances CRM</li>
+      <li>→ Vision : intégration fluide avec les principales plateformes CRM (HubSpot, Pipedrive, Sellsy…)</li>
+      <li>→ Vision : pipeline semi-automatisé, priorisation et suivi intelligent des opportunités</li>
+    </ul>
+  </section>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <section id="value">
+    <h2>Ce que vous gagnez</h2>
+    <div class="grid-3">
+      <div class="card">
+        <strong>Efficacité opérationnelle</strong>
+        <p>Réduisez drastiquement le temps passé à trier des annonces : concentrez-vous sur les biens à fort potentiel réel.</p>
+      </div>
+      <div class="card">
+        <strong>Décision basée sur la donnée</strong>
+        <p>Chaque action s’appuie sur un scoring chiffré — finies les intuitions hasardeuses.</p>
+      </div>
+      <div class="card">
+        <strong>Avantage concurrentiel</strong>
+        <p>Identifiez les opportunités avant vos concurrents, et structurez votre prospection de façon rationnelle et scalable.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <h2>Prêt à explorer les opportunités ?</h2>
+    <a href="map.html" class="btn">Lancer ImmoQuantum</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <form>
+      <input type="text" name="name" placeholder="Votre nom" required />
+      <input type="email" name="email" placeholder="Votre email" required />
+      <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+      <button type="submit" class="btn">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> ImmoQuantum — Données · Décisions · Opportunités
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

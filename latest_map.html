@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_92382db31b5aa019505139a595758d2e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style='position:fixed; left:10px; top:10px; z-index:9999;
+                background:rgba(255,255,255,0.9); padding:6px 10px;
+                border:1px solid #ddd; border-radius:6px;
+                font-family:Arial; font-size:12px;'>
+      <b>BDNB+permis+owners</b><br>
+      <span style='color:#666;'>Généré: 2026-02-11 13:40 — n=19</span>
+    </div>
+    
+            <div class="folium-map" id="map_92382db31b5aa019505139a595758d2e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_92382db31b5aa019505139a595758d2e = L.map(
+                "map_92382db31b5aa019505139a595758d2e",
+                {
+                    center: [48.52723121060322, 2.0193573678808168],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_92382db31b5aa019505139a595758d2e);
+
+            
+
+        
+    
+            var tile_layer_eed711eeb7adbf96b224dce8ece2e8be = L.tileLayer(
+                "https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "CartoDB / OSM",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_eed711eeb7adbf96b224dce8ece2e8be.addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+            var circle_marker_ed35b14c8c22d9786f43b3fdb722a8e2 = L.circleMarker(
+                [48.52723121060322, 2.0193573678808168],
+                {"bubblingMouseEvents": true, "color": "#06f800", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#06f800", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_d90cf52c7c59dcdd05f569036e9c98c5 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_69a8027938b26fb4a15710a9258f863b = $(`<div id="html_69a8027938b26fb4a15710a9258f863b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 1,208,514<br><b>Date</b>: 2020-12-09 00:00:00<br><b>Valeur</b>: 1100000.0<br><b>Terrain</b>: 10601.0 m²<br><b>Prix/m² terrain</b>: 104.0<br><b>Médiane commune</b>: 218.0<br><b>Adresse</b>: 32 RUE RAYMOND LAUBIER 91410 Dourdan<br><b>Commune</b>: Dourdan<br><b>Proprio</b>: BANQUE D'ESCOMPTE : 562102913 (SA)<br></div></div>`)[0];
+                popup_d90cf52c7c59dcdd05f569036e9c98c5.setContent(html_69a8027938b26fb4a15710a9258f863b);
+            
+        
+
+        circle_marker_ed35b14c8c22d9786f43b3fdb722a8e2.bindPopup(popup_d90cf52c7c59dcdd05f569036e9c98c5)
+        ;
+
+        
+    
+    
+            var circle_marker_58b11623d1b486980b76151321ddaf96 = L.circleMarker(
+                [48.79658628552665, 2.353226078512807],
+                {"bubblingMouseEvents": true, "color": "#20de00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#20de00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_28af6d9e8511d65cd56b66c97e25b758 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_f5baa3fbb981f785be1780baed951d2f = $(`<div id="html_f5baa3fbb981f785be1780baed951d2f" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 3,364,696<br><b>Date</b>: 2020-12-22 00:00:00<br><b>Valeur</b>: 3360000.0<br><b>Terrain</b>: 14503.0 m²<br><b>Prix/m² terrain</b>: 232.0<br><b>Médiane commune</b>: 464.0<br><b>Adresse</b>: 2 Rue Alexandre Dumas 94800 Villejuif<br><b>Commune</b>: Villejuif<br><b>Proprio</b>: LOGIREP : 393542428 (SA)<br><b>Permis</b> (7): 2020-02-14 NA Autorisé #PD09407619W2022 | 2020-02-14 NA Autorisé #PD09407619W2023 | 2020-03-10 NA Autorisé #PD09407620W2004 | 2020-03-10 NA Autorisé #PD09407620W2003 | 2020-03-23 NA Autorisé #PD09407619W2019 | 2020-03-23 NA Autorisé #PD09407619W2021 | 2022-07-12 nouvelle construction Autorisé #PC09407621W1106<br></div></div>`)[0];
+                popup_28af6d9e8511d65cd56b66c97e25b758.setContent(html_f5baa3fbb981f785be1780baed951d2f);
+            
+        
+
+        circle_marker_58b11623d1b486980b76151321ddaf96.bindPopup(popup_28af6d9e8511d65cd56b66c97e25b758)
+        ;
+
+        
+    
+    
+            var circle_marker_b46689c51d908226120d1b9deba2695c = L.circleMarker(
+                [48.766771418351894, 2.379949340926319],
+                {"bubblingMouseEvents": true, "color": "#4faf00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4faf00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_14824ab6971172938163a47d0c97e699 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_461e0bc181867acccc50a39459d4c111 = $(`<div id="html_461e0bc181867acccc50a39459d4c111" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 7,263,828<br><b>Date</b>: 2016-11-29 00:00:00<br><b>Valeur</b>: 2218820.5<br><b>Terrain</b>: 8466.0 m²<br><b>Prix/m² terrain</b>: 262.0<br><b>Médiane commune</b>: 1120.0<br><b>Adresse</b>: 35B Avenue du Général de Gaulle 94320 Thiais<br><b>Commune</b>: Thiais<br><b>Proprio</b>: COMMUNE DE THIAIS : 219400736 (COM)<br></div></div>`)[0];
+                popup_14824ab6971172938163a47d0c97e699.setContent(html_461e0bc181867acccc50a39459d4c111);
+            
+        
+
+        circle_marker_b46689c51d908226120d1b9deba2695c.bindPopup(popup_14824ab6971172938163a47d0c97e699)
+        ;
+
+        
+    
+    
+            var circle_marker_153c50ac949c51828f42f376bc9ab1a9 = L.circleMarker(
+                [48.51134838297479, 2.25498889035126],
+                {"bubblingMouseEvents": true, "color": "#01fd00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01fd00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_3988b47ce36e0355157d9434be94dc6a = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_86c328e128db486bbd5b55d530e29f39 = $(`<div id="html_86c328e128db486bbd5b55d530e29f39" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 816,060<br><b>Date</b>: 2024-01-17 00:00:00<br><b>Valeur</b>: 421650.0<br><b>Terrain</b>: 7035.0 m²<br><b>Prix/m² terrain</b>: 60.0<br><b>Médiane commune</b>: 176.0<br><b>Adresse</b>: 23 RUE D AUVERS  Janville-sur-Juine<br><b>Commune</b>: Janville-sur-Juine<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_3988b47ce36e0355157d9434be94dc6a.setContent(html_86c328e128db486bbd5b55d530e29f39);
+            
+        
+
+        circle_marker_153c50ac949c51828f42f376bc9ab1a9.bindPopup(popup_3988b47ce36e0355157d9434be94dc6a)
+        ;
+
+        
+    
+    
+            var circle_marker_92c656ac242996ce47eba75e057f3037 = L.circleMarker(
+                [49.08817948806771, 1.8933192586007195],
+                {"bubblingMouseEvents": true, "color": "#01fd00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#01fd00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_afb41e22acc8b705051e494a191a7744 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_de7b3a220b5433a8c7e1229c05118caa = $(`<div id="html_de7b3a220b5433a8c7e1229c05118caa" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 794,420<br><b>Date</b>: 2023-03-30 00:00:00<br><b>Valeur</b>: 610000.0<br><b>Terrain</b>: 7222.0 m²<br><b>Prix/m² terrain</b>: 84.0<br><b>Médiane commune</b>: 194.0<br><b>Adresse</b>: 10 RUE DE LA CROIX BOSSIERE 95450 Théméricourt<br><b>Commune</b>: Théméricourt<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_afb41e22acc8b705051e494a191a7744.setContent(html_de7b3a220b5433a8c7e1229c05118caa);
+            
+        
+
+        circle_marker_92c656ac242996ce47eba75e057f3037.bindPopup(popup_afb41e22acc8b705051e494a191a7744)
+        ;
+
+        
+    
+    
+            var circle_marker_697acec3a9e3ae3eeec910cf454d78bd = L.circleMarker(
+                [48.86992427810505, 2.1517549102680746],
+                {"bubblingMouseEvents": true, "color": "#25d900", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#25d900", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_6595ea1741ef5be2348b50fcabc5f4e6 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_558ae04a3038f326e870246039bc2aeb = $(`<div id="html_558ae04a3038f326e870246039bc2aeb" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 3,748,395<br><b>Date</b>: 2018-02-20 00:00:00<br><b>Valeur</b>: 1535000.0<br><b>Terrain</b>: 6090.0 m²<br><b>Prix/m² terrain</b>: 252.0<br><b>Médiane commune</b>: 867.5<br><b>Adresse</b>: 32 RUE DES CLOSEAUX 92500 Rueil-Malmaison<br><b>Commune</b>: Rueil-Malmaison<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_6595ea1741ef5be2348b50fcabc5f4e6.setContent(html_558ae04a3038f326e870246039bc2aeb);
+            
+        
+
+        circle_marker_697acec3a9e3ae3eeec910cf454d78bd.bindPopup(popup_6595ea1741ef5be2348b50fcabc5f4e6)
+        ;
+
+        
+    
+    
+            var circle_marker_16863bf6a3172adb1b6f299eb899230c = L.circleMarker(
+                [48.5547030319867, 1.9982671191567423],
+                {"bubblingMouseEvents": true, "color": "#1be300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1be300", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_3b3bb40c0a0338ee089bd33be6aa39ca = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_a5ea7f028733b68cdd0ec397fa3bfa59 = $(`<div id="html_a5ea7f028733b68cdd0ec397fa3bfa59" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 2,899,476<br><b>Date</b>: 2020-09-30 00:00:00<br><b>Valeur</b>: 998280.0<br><b>Terrain</b>: 17898.0 m²<br><b>Prix/m² terrain</b>: 56.0<br><b>Médiane commune</b>: 218.0<br><b>Adresse</b>: 32 RUE DE LA GAMBADE 91410 Dourdan<br><b>Commune</b>: Dourdan<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_3b3bb40c0a0338ee089bd33be6aa39ca.setContent(html_a5ea7f028733b68cdd0ec397fa3bfa59);
+            
+        
+
+        circle_marker_16863bf6a3172adb1b6f299eb899230c.bindPopup(popup_3b3bb40c0a0338ee089bd33be6aa39ca)
+        ;
+
+        
+    
+    
+            var circle_marker_b4c7f449ddc46ea5ac220b0362c87097 = L.circleMarker(
+                [49.00947300144145, 2.388690406131787],
+                {"bubblingMouseEvents": true, "color": "#11ed00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#11ed00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_3c1f2dd4bffcb777e24bfdd177a4ebc6 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_fece61ac87e8e586da1ec60d504a524b = $(`<div id="html_fece61ac87e8e586da1ec60d504a524b" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 2,079,315<br><b>Date</b>: 2023-05-12 00:00:00<br><b>Valeur</b>: 965490.0<br><b>Terrain</b>: 14145.0 m²<br><b>Prix/m² terrain</b>: 68.0<br><b>Médiane commune</b>: 215.0<br><b>Adresse</b>: 8 Rue Joseph Guerbigny 95400 Villiers-le-Bel<br><b>Commune</b>: Villiers-le-Bel<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_3c1f2dd4bffcb777e24bfdd177a4ebc6.setContent(html_fece61ac87e8e586da1ec60d504a524b);
+            
+        
+
+        circle_marker_b4c7f449ddc46ea5ac220b0362c87097.bindPopup(popup_3c1f2dd4bffcb777e24bfdd177a4ebc6)
+        ;
+
+        
+    
+    
+            var circle_marker_34239591218f6a2224601e29ab06ef43 = L.circleMarker(
+                [48.635778261197494, 2.475326079739759],
+                {"bubblingMouseEvents": true, "color": "#00ff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00ff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_cb62c8b73357e15d57f50896ee48e64b = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_d1e7fb17aaaaad05fedfe5aa7b334157 = $(`<div id="html_d1e7fb17aaaaad05fedfe5aa7b334157" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 656,776<br><b>Date</b>: 2024-10-01 00:00:00<br><b>Valeur</b>: 581400.0<br><b>Terrain</b>: 6196.0 m²<br><b>Prix/m² terrain</b>: 94.0<br><b>Médiane commune</b>: 200.0<br><b>Commune</b>: Étiolles<br><b>Proprio</b>: NA : NA (NA)<br><b>Permis</b> (1): 2023-11-29 nouvelle construction Commencé #PC0912252300002<br></div></div>`)[0];
+                popup_cb62c8b73357e15d57f50896ee48e64b.setContent(html_d1e7fb17aaaaad05fedfe5aa7b334157);
+            
+        
+
+        circle_marker_34239591218f6a2224601e29ab06ef43.bindPopup(popup_cb62c8b73357e15d57f50896ee48e64b)
+        ;
+
+        
+    
+    
+            var circle_marker_64a335ed1519181322cd34ebfa0a2cc4 = L.circleMarker(
+                [48.74160203333333, 2.3925119000000015],
+                {"bubblingMouseEvents": true, "color": "#1fdf00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1fdf00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_640bc3bb55a5cf6b55c4dff093e5e96f = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_0a01327c2fdd8f042393d54eccba3af7 = $(`<div id="html_0a01327c2fdd8f042393d54eccba3af7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 3,236,180<br><b>Date</b>: 2021-05-07 00:00:00<br><b>Valeur</b>: 565100.0<br><b>Terrain</b>: 7526.0 m²<br><b>Prix/m² terrain</b>: 75.0<br><b>Médiane commune</b>: 505.0<br><b>Adresse</b>: 19 Rue de la Ferme 94310 Orly<br><b>Commune</b>: Orly<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_640bc3bb55a5cf6b55c4dff093e5e96f.setContent(html_0a01327c2fdd8f042393d54eccba3af7);
+            
+        
+
+        circle_marker_64a335ed1519181322cd34ebfa0a2cc4.bindPopup(popup_640bc3bb55a5cf6b55c4dff093e5e96f)
+        ;
+
+        
+    
+    
+            var circle_marker_d98696e4883552fad8093762144d60a2 = L.circleMarker(
+                [48.82937368969494, 2.1716090790555937],
+                {"bubblingMouseEvents": true, "color": "#21dd00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#21dd00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_36e965cb803cdcc434318473c44fbc57 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_d44b203e239af8c08706f39cc700acfc = $(`<div id="html_d44b203e239af8c08706f39cc700acfc" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 3,424,185<br><b>Date</b>: 2023-12-22 00:00:00<br><b>Valeur</b>: 9600000.0<br><b>Terrain</b>: 24285.0 m²<br><b>Prix/m² terrain</b>: 395.0<br><b>Médiane commune</b>: 536.0<br><b>Adresse</b>: 22 Rue Georges et Xavier Schlumberger 92430 Marnes-la-Coquette<br><b>Commune</b>: Marnes-la-Coquette<br><b>Proprio</b>: SCI SAINT PIERRE : 979750965 (SCI)<br></div></div>`)[0];
+                popup_36e965cb803cdcc434318473c44fbc57.setContent(html_d44b203e239af8c08706f39cc700acfc);
+            
+        
+
+        circle_marker_d98696e4883552fad8093762144d60a2.bindPopup(popup_36e965cb803cdcc434318473c44fbc57)
+        ;
+
+        
+    
+    
+            var circle_marker_991670cc581d1d178bd7b04496134af9 = L.circleMarker(
+                [49.040638969281844, 2.2273096928364393],
+                {"bubblingMouseEvents": true, "color": "#0df100", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0df100", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_1b7402aa7d6ba77b47b7945fce880353 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_bef78eb6048daf60e5764f765a3f3ed7 = $(`<div id="html_bef78eb6048daf60e5764f765a3f3ed7" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 1,772,280<br><b>Date</b>: 2018-06-08 00:00:00<br><b>Valeur</b>: 630000.0<br><b>Terrain</b>: 10940.0 m²<br><b>Prix/m² terrain</b>: 58.0<br><b>Médiane commune</b>: 220.0<br><b>Adresse</b>: 162 GRANDE RUE  Bessancourt<br><b>Commune</b>: Bessancourt<br><b>Proprio</b>: SCI DU BOUT D'EN HAUT : 834356230 (SCI)<br></div></div>`)[0];
+                popup_1b7402aa7d6ba77b47b7945fce880353.setContent(html_bef78eb6048daf60e5764f765a3f3ed7);
+            
+        
+
+        circle_marker_991670cc581d1d178bd7b04496134af9.bindPopup(popup_1b7402aa7d6ba77b47b7945fce880353)
+        ;
+
+        
+    
+    
+            var circle_marker_1ba68289cab1e07bce365b45a74fe0a5 = L.circleMarker(
+                [48.86787081846032, 2.2182163989571206],
+                {"bubblingMouseEvents": true, "color": "#03fb00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#03fb00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_d3019b5243b1edc802b8d24b0a5cb4ba = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_842042da18fb6dd946d859a323cf44cf = $(`<div id="html_842042da18fb6dd946d859a323cf44cf" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 935,160<br><b>Date</b>: 2016-12-29 00:00:00<br><b>Valeur</b>: 560801.25<br><b>Terrain</b>: 7793.0 m²<br><b>Prix/m² terrain</b>: 72.0<br><b>Médiane commune</b>: 192.0<br><b>Adresse</b>: 1 ALLEE DES BERGERONNETTES 92150 Suresnes<br><b>Commune</b>: Suresnes<br><b>Proprio</b>: HAUTS-DE-SEINE HABITAT - OPH : 279200224 (EPIC)<br></div></div>`)[0];
+                popup_d3019b5243b1edc802b8d24b0a5cb4ba.setContent(html_842042da18fb6dd946d859a323cf44cf);
+            
+        
+
+        circle_marker_1ba68289cab1e07bce365b45a74fe0a5.bindPopup(popup_d3019b5243b1edc802b8d24b0a5cb4ba)
+        ;
+
+        
+    
+    
+            var circle_marker_8720b5e32f9d8188988e55e3864f69e3 = L.circleMarker(
+                [48.59790813375056, 2.2882785739163465],
+                {"bubblingMouseEvents": true, "color": "#0ef000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0ef000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_6b679650195c65c83031b259681aab3e = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_7e00f06f2b79883ba7887928be1e8879 = $(`<div id="html_7e00f06f2b79883ba7887928be1e8879" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 1,849,460<br><b>Date</b>: 2018-04-16 00:00:00<br><b>Valeur</b>: 302000.0<br><b>Terrain</b>: 5966.0 m²<br><b>Prix/m² terrain</b>: 51.0<br><b>Médiane commune</b>: 361.0<br><b>Adresse</b>: 5 RUE DU BOIS JOLI 91220 Brétigny-sur-Orge<br><b>Commune</b>: Brétigny-sur-Orge<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_6b679650195c65c83031b259681aab3e.setContent(html_7e00f06f2b79883ba7887928be1e8879);
+            
+        
+
+        circle_marker_8720b5e32f9d8188988e55e3864f69e3.bindPopup(popup_6b679650195c65c83031b259681aab3e)
+        ;
+
+        
+    
+    
+            var circle_marker_791fab7737a2f95e5efe0c69dc833a8a = L.circleMarker(
+                [48.591919392838555, 2.2718657632684556],
+                {"bubblingMouseEvents": true, "color": "#6b9300", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6b9300", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_c64bbe22826a6d8b177f93fdb0a1dd4b = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_b8e73c20ae5e55a3300997ea4817ac8d = $(`<div id="html_b8e73c20ae5e55a3300997ea4817ac8d" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 9,536,176<br><b>Date</b>: 2019-07-10 00:00:00<br><b>Valeur</b>: 696000.0<br><b>Terrain</b>: 9386.0 m²<br><b>Prix/m² terrain</b>: 74.0<br><b>Médiane commune</b>: 1090.0<br><b>Adresse</b>: 24 RUE CHAUDET 91180 Saint-Germain-lès-Arpajon<br><b>Commune</b>: Saint-Germain-lès-Arpajon<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_c64bbe22826a6d8b177f93fdb0a1dd4b.setContent(html_b8e73c20ae5e55a3300997ea4817ac8d);
+            
+        
+
+        circle_marker_791fab7737a2f95e5efe0c69dc833a8a.bindPopup(popup_c64bbe22826a6d8b177f93fdb0a1dd4b)
+        ;
+
+        
+    
+    
+            var circle_marker_680117f5691cbd388712be05112b0c4c = L.circleMarker(
+                [48.84359216666667, 2.1545634666666658],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_2f448d5d1c81003747e078b082b0f265 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_d10723f0d055f27e85cc177dc4aa4034 = $(`<div id="html_d10723f0d055f27e85cc177dc4aa4034" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 21,774,770<br><b>Date</b>: 2020-02-05 00:00:00<br><b>Valeur</b>: 2337700.0<br><b>Terrain</b>: 33970.0 m²<br><b>Prix/m² terrain</b>: 69.0<br><b>Médiane commune</b>: 710.0<br><b>Adresse</b>: 17 ALLEE SAINT GILLES 92420 Vaucresson<br><b>Commune</b>: Vaucresson<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_2f448d5d1c81003747e078b082b0f265.setContent(html_d10723f0d055f27e85cc177dc4aa4034);
+            
+        
+
+        circle_marker_680117f5691cbd388712be05112b0c4c.bindPopup(popup_2f448d5d1c81003747e078b082b0f265)
+        ;
+
+        
+    
+    
+            var circle_marker_46c8fd5b536de29e2b321980175c7cb2 = L.circleMarker(
+                [49.001743455012374, 2.3168532989663526],
+                {"bubblingMouseEvents": true, "color": "#2ad400", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ad400", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_ed4455ee96b6b998906408ff232258d6 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_735f3336301fda4946477e81e7cd3407 = $(`<div id="html_735f3336301fda4946477e81e7cd3407" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 4,149,145<br><b>Date</b>: 2021-03-26 00:00:00<br><b>Valeur</b>: 1625000.0<br><b>Terrain</b>: 29015.0 m²<br><b>Prix/m² terrain</b>: 56.0<br><b>Médiane commune</b>: 199.0<br><b>Adresse</b>: 28 Chemin des Bois Briffaults 95160 Montmorency<br><b>Commune</b>: Montmorency<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_ed4455ee96b6b998906408ff232258d6.setContent(html_735f3336301fda4946477e81e7cd3407);
+            
+        
+
+        circle_marker_46c8fd5b536de29e2b321980175c7cb2.bindPopup(popup_ed4455ee96b6b998906408ff232258d6)
+        ;
+
+        
+    
+    
+            var circle_marker_5c0affda366aa20a4157ab7549cb35ab = L.circleMarker(
+                [48.56725236666667, 2.4573355000000032],
+                {"bubblingMouseEvents": true, "color": "#42bc00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#42bc00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_4200b0ec7ba20213ff75d06d0bdb9102 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_89f5c2d504a13ae106b443c84ee97c59 = $(`<div id="html_89f5c2d504a13ae106b443c84ee97c59" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 6,142,000<br><b>Date</b>: 2021-11-08 00:00:00<br><b>Valeur</b>: 886621.0<br><b>Terrain</b>: 9250.0 m²<br><b>Prix/m² terrain</b>: 96.0<br><b>Médiane commune</b>: 760.0<br><b>Adresse</b>: 4 RUE DE TARARE  Ormoy<br><b>Commune</b>: Ormoy<br><b>Proprio</b>: SORGEM SOCIETE D ECONOMIE MIXTE DU VAL D ORGE : 343850517 (SEM)<br><b>Permis</b> (4): 2022-09-17 nouvelle construction Autorisé #PC0914682210019 | 2023-01-03 nouvelle construction Commencé #PC0914682210032 | 2023-01-12 nouvelle construction Autorisé #PC0914682210034 | 2023-02-07 nouvelle construction Autorisé #PC0914682210043<br></div></div>`)[0];
+                popup_4200b0ec7ba20213ff75d06d0bdb9102.setContent(html_89f5c2d504a13ae106b443c84ee97c59);
+            
+        
+
+        circle_marker_5c0affda366aa20a4157ab7549cb35ab.bindPopup(popup_4200b0ec7ba20213ff75d06d0bdb9102)
+        ;
+
+        
+    
+    
+            var circle_marker_232117bacd0e59574a93507aa83fd1c6 = L.circleMarker(
+                [48.51900506519103, 2.011185947180059],
+                {"bubblingMouseEvents": true, "color": "#0ef000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0ef000", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_92382db31b5aa019505139a595758d2e);
+        
+    
+        var popup_ce4459de89776a4ce6e5f413a0e245f4 = L.popup({
+  "maxWidth": 420,
+});
+
+        
+            
+                var html_f4ad484745374e04bda8e59730e22ec5 = $(`<div id="html_f4ad484745374e04bda8e59730e22ec5" style="width: 100.0%; height: 100.0%;"><div style='font-family:Arial; font-size:12px;'><b>Score</b>: 1,856,520<br><b>Date</b>: 2020-05-22 00:00:00<br><b>Valeur</b>: 637000.0<br><b>Terrain</b>: 11460.0 m²<br><b>Prix/m² terrain</b>: 56.0<br><b>Médiane commune</b>: 218.0<br><b>Adresse</b>: 3 CHEMIN DE LA BUTTE DE NORMONT 91410 Dourdan<br><b>Commune</b>: Dourdan<br><b>Proprio</b>: NA : NA (NA)<br></div></div>`)[0];
+                popup_ce4459de89776a4ce6e5f413a0e245f4.setContent(html_f4ad484745374e04bda8e59730e22ec5);
+            
+        
+
+        circle_marker_232117bacd0e59574a93507aa83fd1c6.bindPopup(popup_ce4459de89776a4ce6e5f413a0e245f4)
+        ;
+
+        
+    
+</script>
+</html>

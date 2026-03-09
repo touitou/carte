@@ -3,302 +3,271 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Documentation — Opportunités foncières et immobilières</title>
+  <title>Documentation fonctionnelle complète — Outil d’opportunités foncières</title>
   <style>
-    :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --accent: #1d4ed8;
+    :root{
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --accent:#1d4ed8;
     }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, Segoe UI, Arial, sans-serif;
-      line-height: 1.55;
-    }
-    .wrap {
-      max-width: 1100px;
-      margin: 24px auto;
-      padding: 0 16px 32px;
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin-bottom: 14px;
-    }
-    h1, h2, h3, h4 { margin: 0 0 10px; }
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 1.25rem; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-    h3 { font-size: 1.05rem; color: #111827; }
-    h4 { font-size: 0.98rem; color: #0f172a; }
-    p { margin: 0 0 10px; }
-    ul { margin: 8px 0 12px 20px; }
-    li { margin: 4px 0; }
-    code {
-      background: #eef2ff;
-      color: #1e3a8a;
-      padding: 1px 6px;
-      border-radius: 6px;
-      font-size: 0.92em;
-    }
-    .muted { color: var(--muted); }
-    .toc a { color: var(--accent); text-decoration: none; }
-    .toc a:hover { text-decoration: underline; }
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.55}
+    .wrap{max-width:1100px;margin:24px auto;padding:0 16px 28px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+    h1,h2,h3,h4{margin:0 0 10px}
+    h1{font-size:1.6rem}
+    h2{font-size:1.2rem;border-bottom:1px solid var(--line);padding-bottom:6px}
+    h3{font-size:1.03rem}
+    h4{font-size:.95rem}
+    p{margin:0 0 10px}
+    ul,ol{margin:8px 0 12px 20px}
+    li{margin:4px 0}
+    code{background:#eef2ff;color:#1e3a8a;padding:1px 6px;border-radius:6px}
+    .muted{color:var(--muted)}
+    .toc a{color:var(--accent);text-decoration:none}
+    .toc a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>Documentation — Sources de données et champs affichés (écran de recherche + carte)</h1>
-      <p class="muted">Version HTML à destination technique et client.</p>
+      <h1>Documentation fonctionnelle complète (non technique)</h1>
+      <p><b>Outil de recherche d’opportunités foncières — Sources de données + champs expliqués</b></p>
+      <p class="muted">Version orientée métier (prospection, investissement, direction, commerce).</p>
+      <p>Objectif :</p>
       <ul>
-        <li>sources de données utilisées par l’application Gradio BDNB,</li>
-        <li>champs affichés dans l’écran de recherche,</li>
-        <li>champs affichés dans la carte (popup Folium + table HTML),</li>
-        <li>présentation non technique orientée clients/prospects.</li>
+        <li>expliquer d’où viennent les données,</li>
+        <li>expliquer chaque champ de l’écran de recherche,</li>
+        <li>expliquer chaque champ visible dans la carte,</li>
+        <li>donner des exemples concrets d’utilisation.</li>
       </ul>
     </div>
 
     <div class="card toc">
       <h2>Sommaire</h2>
-      <ul>
-        <li><a href="#sec0">0) Présentation du projet (version client)</a></li>
-        <li><a href="#sec1">1) Périmètre technique</a></li>
-        <li><a href="#sec2">2) Sources de données</a></li>
-        <li><a href="#sec3">3) Champs affichés dans l’écran de recherche</a></li>
-        <li><a href="#sec4">4) Champs affichés dans la carte (popup)</a></li>
-        <li><a href="#sec5">5) Champs affichés dans la table HTML</a></li>
-        <li><a href="#sec6">6) Logique d’assemblage (résumé)</a></li>
-        <li><a href="#sec7">7) Remarques importantes</a></li>
-      </ul>
-    </div>
-
-    <div class="card" id="sec0">
-      <h2>0) Présentation du projet (version client)</h2>
-
-      <h3>À quoi sert ce projet ?</h3>
-      <p>Cette solution aide à <b>identifier rapidement des opportunités foncières et immobilières</b> à partir de données publiques et d’enrichissements métiers.</p>
-      <ul>
-        <li>repérer des parcelles potentiellement intéressantes,</li>
-        <li>visualiser ces opportunités sur une carte interactive,</li>
-        <li>comprendre le contexte (prix, surface, permis, usages, contraintes urbanistiques),</li>
-        <li>prioriser les dossiers grâce à un <b>score</b>.</li>
-      </ul>
-
-      <h3>Pour quels usages ?</h3>
-      <ul>
-        <li>prospection foncière,</li>
-        <li>qualification d’un secteur avant acquisition,</li>
-        <li>aide à la décision pour développeurs, investisseurs, aménageurs,</li>
-        <li>préparation d’échanges avec partenaires, collectivités et équipes internes.</li>
-      </ul>
-
-      <h3>D’où viennent les données ? (explication simple)</h3>
-      <ul>
-        <li><b>DVF</b> : historique des transactions immobilières (prix, dates, surfaces),</li>
-        <li><b>BDNB</b> : informations bâtiment/parcelle (géométrie, usages, adresses...),</li>
-        <li><b>Sitadel / autorisations d’urbanisme</b> : signaux de permis et dynamiques de transformation,</li>
-        <li><b>PLU (Géoportail de l’urbanisme / IGN)</b> : zonage et documents de référence,</li>
-        <li>et, selon options, des compléments pour mieux qualifier occupants/propriétaires.</li>
-      </ul>
-
-      <h3>Quelle valeur pour un client ?</h3>
-      <ul>
-        <li><b>gain de temps</b> sur la recherche,</li>
-        <li><b>vision cartographique immédiate</b>,</li>
-        <li><b>priorisation objective</b> via des critères paramétrables,</li>
-        <li><b>meilleure préparation</b> des analyses terrain et décisions.</li>
-      </ul>
-
-      <h3>Quels types de potentiels cela permet d’ouvrir ?</h3>
-      <h4>1) Potentiel foncier</h4>
-      <ul>
-        <li>Parcelles sous-valorisées au regard des références locales.</li>
-        <li>Surfaces de terrain importantes avec faible niveau d’occupation bâtie.</li>
-        <li>Opportunités de recomposition parcellaire ou d’assemblage.</li>
-      </ul>
-
-      <h4>2) Potentiel de densification / transformation</h4>
-      <ul>
-        <li>Sites avec marge de création de surface (selon contexte urbanistique).</li>
-        <li>Parcelles présentant des signaux de transformation via les permis.</li>
-        <li>Bâtiments ou emprises pouvant faire l’objet d’un repositionnement.</li>
-      </ul>
-
-      <h4>3) Potentiel de requalification d’actifs</h4>
-      <ul>
-        <li>Actifs anciens à revaloriser (année de construction, usage, état énergétique).</li>
-        <li>Ciblage de poches de valeur via croisement prix/surfaces/usages.</li>
-        <li>Hiérarchisation des actifs à arbitrer, rénover ou transformer.</li>
-      </ul>
-
-      <h4>4) Potentiel commercial et pipeline</h4>
-      <ul>
-        <li>Constitution d’un pipeline qualifié de cibles.</li>
-        <li>Priorisation des actions de prospection selon score et critères métiers.</li>
-        <li>Préparation de rendez-vous et argumentaires avec données objectivées.</li>
-      </ul>
-
-      <h4>5) Potentiel partenarial et territorial</h4>
-      <ul>
-        <li>Dialogue renforcé avec collectivités et partenaires locaux.</li>
-        <li>Identification de secteurs cohérents avec une stratégie d’implantation.</li>
-        <li>Appui à la planification d’actions par zone géographique.</li>
-      </ul>
-
-      <h4>6) Potentiel ESG / transition</h4>
-      <ul>
-        <li>Repérage d’actifs à enjeu énergétique (DPE).</li>
-        <li>Orientation vers des scénarios de rénovation et amélioration de performance.</li>
-        <li>Intégration des contraintes urbanistiques dans une stratégie durable.</li>
-      </ul>
-
-      <p><b>En résumé :</b> la plateforme aide à construire une stratégie d’opportunités multi-axes (foncier, transformation, commercial, territorial, ESG).</p>
-
-      <h3>Important à retenir</h3>
-      <ul>
-        <li>L’outil est un <b>assistant d’analyse</b> : il accélère le tri et la compréhension.</li>
-        <li>Les résultats doivent être <b>confirmés</b> par expertise métier et vérifications locales.</li>
-      </ul>
-    </div>
-
-    <div class="card" id="sec1">
-      <h2>1) Périmètre technique</h2>
-      <ul>
-        <li><b>Écran de recherche</b> : <code>run_gradio_bdnb.py</code> (<code>build_demo()</code>)</li>
-        <li><b>Pipeline calcul/enrichissement</b> : <code>immo_bdnb.py</code> (<code>run_bdnb_opportunites</code>)</li>
-        <li><b>Carte et popup</b> : <code>immo_folium.py</code> (<code>build_map_html</code>)</li>
-        <li><b>Table HTML</b> : <code>immo_folium.py</code> (<code>build_table_html</code>)</li>
-      </ul>
-    </div>
-
-    <div class="card" id="sec2">
-      <h2>2) Sources de données</h2>
-      <h3>2.1 Source principale BDNB (DuckDB)</h3>
-      <ul>
-        <li>Fichier : <code>bdnb_millesime_2025-07-a.duckdb</code></li>
-        <li>Tables principales : <code>batiment_groupe_dvf_open_representatif</code>, <code>batiment_groupe</code>, <code>parcelle</code>, <code>adresse</code>, <code>proprietaire</code>, <code>sitadel</code>, <code>batiment_groupe_urbanisme</code>, <code>batiment_groupe_dpe_*</code>...</li>
-      </ul>
-
-      <h3>2.2 Source DVF CSV (scope complémentaire)</h3>
-      <ul>
-        <li>Paramètre UI : <code>DVF CSV glob</code></li>
-        <li>Défaut : <code>downloads/csv/National/merged/dvf_plus_d*.csv</code></li>
-      </ul>
-
-      <h3>2.3 Source permis CSV (Sitadel externe)</h3>
-      <ul>
-        <li>Paramètre UI : <code>Permis CSV path</code></li>
-        <li>Défaut : <code>data/Liste-des-autorisations-durbanisme-creant-des-locaux-non-residentiels.2025-12.csv</code></li>
-      </ul>
-
-      <h3>2.4 API IGN GPU (optionnelle)</h3>
-      <ul>
-        <li>Option UI : <code>PLU GPU (API IGN, réseau, cache)</code></li>
-        <li>API : <code>https://apicarto.ign.fr/api/gpu/zone-urba</code></li>
-        <li>Cache local : <code>cache_plu_gpu.parquet</code></li>
-      </ul>
-
-      <h3>2.5 Cache SIRENE (optionnel)</h3>
-      <ul>
-        <li>Géré via <code>sirene_cache.py</code> / <code>cache_enrich.duckdb</code></li>
-      </ul>
-    </div>
-
-    <div class="card" id="sec3">
-      <h2>3) Champs affichés dans l’écran de recherche (Gradio)</h2>
-
-      <h3>3.1 Critères principaux</h3>
-      <ul>
-        <li><code>db_path</code>, <code>dvf_csv_glob</code>, <code>permis_csv_path</code></li>
-        <li><code>departements</code>, <code>date_min</code>, <code>date_max</code></li>
-        <li><code>terrain_only</code>, <code>surface_terrain_min</code></li>
-        <li><code>prix_m2_terrain_min</code>, <code>prix_m2_terrain_max</code></li>
-        <li><code>delta_ref_min</code>, <code>top_n</code>, <code>hard_cap</code></li>
-      </ul>
-
-      <h3>3.2 Scoring</h3>
-      <ul><li><code>score_formula</code></li></ul>
-
-      <h3>3.3 Géométrie / performance</h3>
-      <ul>
-        <li><code>geom_mode</code> : <code>centroid</code> | <code>parcelle</code> | <code>batiment</code></li>
-        <li><code>simplify_m</code>, <code>parcelle_principale_only</code></li>
-      </ul>
-
-      <h3>3.4 Enrichissements</h3>
-      <ul>
-        <li><code>include_adresse</code>, <code>include_proprietaires</code>, <code>include_permis</code></li>
-        <li><code>include_urbanisme_bdnb</code>, <code>include_plu_gpu</code></li>
-      </ul>
-
-      <h3>3.5 Scope parcellaire</h3>
-      <ul>
-        <li><code>include_parcelles_scope</code>, <code>parcelles_scope_requires_permis</code></li>
-        <li><code>include_dvf_scope</code>, <code>parcelles_top_n</code></li>
-      </ul>
-
-      <h3>3.6 Sorties affichées</h3>
-      <ul>
-        <li><code>status</code>, <code>sql_out</code>, <code>map_out</code>, <code>table_out</code></li>
-        <li>Liens des fichiers HTML et bloc publication GitHub Pages.</li>
-      </ul>
-    </div>
-
-    <div class="card" id="sec4">
-      <h2>4) Champs affichés dans la carte (popup Folium)</h2>
-      <h3>4.1 Fiche</h3>
-      <p>Transaction, parcelle, cadastre, commune, adresse, type de bien, date mutation, valeur foncière, surfaces, ratio bâti/parcelle, prix/m², médiane commune, écart, score, année construction, niveaux, usages.</p>
-
-      <h3>4.2 Propriétaires</h3>
-      <p>Liste propriétaires, SIREN valides, autres IDs, liens sociétés (Annuaire, Pappers, Societe.com).</p>
-
-      <h3>4.3 Permis & occupants</h3>
-      <p>Historique permis, occupants SIRENE (si disponibles), demandeurs Sitadel.</p>
-
-      <h3>4.4 Énergie (DPE)</h3>
-      <p>DPE logement et tertiaire (classe, conso, GES).</p>
-
-      <h3>4.5 Urbanisme</h3>
-      <p>Monument historique, dénomination, distance.</p>
-
-      <h3>4.6 PLU</h3>
-      <p>Zone PLU (GPU/BDNB), partition, liens Géoportail, règlement et autres documents.</p>
-    </div>
-
-    <div class="card" id="sec5">
-      <h2>5) Champs affichés dans la table HTML associée à la carte</h2>
-      <p>La table reprend les colonnes disponibles parmi la sélection prioritaire du code (<code>cols_pref</code>) :</p>
-      <p><code>score</code>, <code>date_mutation</code>, <code>valeur_fonciere</code>, <code>surface_terrain_mutee</code>, <code>parcelle_area_m2</code>, <code>batiment_area_m2</code>, <code>bati_ratio</code>, <code>prix_m2_terrain</code>, <code>prix_m2_ref_commune</code>, <code>delta_ref</code>, <code>libelle_commune_insee</code>, <code>libelle_adresse</code>, <code>annee_construction</code>, <code>usage_niveau_1_txt</code>, <code>usage_principal_bdnb_open</code>, <code>dpe_logement_classe</code>, <code>dpe_logement_conso_ep_m2</code>, <code>dpe_logement_ges_kgco2_m2</code>, <code>liste_proprietaires</code>, <code>nb_siren_valides</code>, <code>nb_ids_autres</code>, <code>nb_permis</code>, <code>permis_last_date</code>, <code>permis_last_numero</code>, <code>permis_last_nature</code>, <code>permis_last_statut</code>, <code>permis_last_s_hab_creee</code>, <code>permis_last_s_loc_creee</code>, <code>nb_demandeurs_permis</code>, <code>liste_demandeurs_permis</code>, <code>plu_zone_code</code>, <code>plu_zone_type</code>, <code>plu_doc_partition</code>, <code>zone_plu_bati_patrimonial</code>.</p>
-    </div>
-
-    <div class="card" id="sec6">
-      <h2>6) Logique d’assemblage (résumé)</h2>
       <ol>
-        <li>Filtrage principal transactions (BDNB + critères écran)</li>
-        <li>Extension optionnelle scope parcelles BDNB</li>
-        <li>Extension optionnelle scope DVF CSV</li>
-        <li>Enrichissements (adresse, propriétaires, permis, DPE, urbanisme)</li>
-        <li>Calcul du score</li>
-        <li>Construction géométrie affichée (<code>centroid</code>/<code>parcelle</code>/<code>batiment</code>)</li>
-        <li>Enrichissement optionnel PLU GPU</li>
-        <li>Rendu carte + popup + table HTML</li>
+        <li><a href="#s1">À quoi sert l’outil</a></li>
+        <li><a href="#s2">Sources de données</a></li>
+        <li><a href="#s3">Écran de recherche — champ par champ</a></li>
+        <li><a href="#s4">Carte — fiche opportunité champ par champ</a></li>
+        <li><a href="#s5">Table de résultats</a></li>
+        <li><a href="#s6">Questions métier</a></li>
+        <li><a href="#s7">Limites et bon usage</a></li>
       </ol>
     </div>
 
-    <div class="card" id="sec7">
-      <h2>7) Remarques importantes</h2>
+    <div class="card" id="s1">
+      <h2>1) À quoi sert l’outil (rappel simple)</h2>
+      <p>L’outil sert à repérer, comparer et prioriser des opportunités immobilières/foncières.</p>
+      <p>Il permet de :</p>
+      <ol>
+        <li>filtrer une zone et des critères,</li>
+        <li>afficher des opportunités sur carte,</li>
+        <li>ouvrir une fiche détaillée par opportunité,</li>
+        <li>classer les dossiers selon un score.</li>
+      </ol>
+    </div>
+
+    <div class="card" id="s2">
+      <h2>2) Sources de données (explication claire)</h2>
+
+      <h3>2.1 Transactions immobilières (DVF)</h3>
+      <p><b>Ce que c’est :</b> base publique des ventes immobilières.</p>
+      <p><b>Ce que ça apporte :</b> date de vente, valeur de transaction, surfaces, repères de prix au m².</p>
+      <p><b>Exemple :</b> une parcelle vendue à un niveau inférieur au marché local peut remonter comme opportunité.</p>
+
+      <h3>2.2 Référentiel bâtiment/parcelle (BDNB)</h3>
+      <p><b>Ce que c’est :</b> base nationale structurée sur les bâtiments et parcelles.</p>
+      <p><b>Ce que ça apporte :</b> géolocalisation, usages, adresse, contexte du bâti.</p>
+      <p><b>Exemple :</b> vous visualisez un point sur carte, ou le contour parcelle/bâtiment selon le mode choisi.</p>
+
+      <h3>2.3 Autorisations d’urbanisme (Sitadel / permis)</h3>
+      <p><b>Ce que c’est :</b> données sur les demandes et autorisations de projets.</p>
+      <p><b>Ce que ça apporte :</b> historique de signaux projet, type/nature de permis, dynamique de transformation.</p>
+      <p><b>Exemple :</b> plusieurs permis récents autour d’un site peuvent signaler une zone en évolution.</p>
+
+      <h3>2.4 Règlementation urbaine (PLU)</h3>
+      <p><b>Ce que c’est :</b> règles d’urbanisme (zonage, contraintes, documents associés).</p>
+      <p><b>Ce que ça apporte :</b> contexte réglementaire de base et pré-qualification des possibilités/contraintes.</p>
+      <p><b>Exemple :</b> avant d’engager des études coûteuses, l’équipe vérifie rapidement le cadre de zone.</p>
+
+      <h3>2.5 Données énergie (DPE)</h3>
+      <p><b>Ce que c’est :</b> informations de performance énergétique (quand disponibles).</p>
+      <p><b>Ce que ça apporte :</b> repérage des actifs à enjeu de rénovation, lecture du potentiel de requalification.</p>
+      <p><b>Exemple :</b> un site avec indicateurs énergétiques faibles peut devenir une cible de transformation.</p>
+
+      <h3>2.6 Données acteurs (propriétaires / entreprises)</h3>
+      <p><b>Ce que c’est :</b> informations pour identifier propriétaires/acteurs économiques (selon disponibilité).</p>
+      <p><b>Ce que ça apporte :</b> meilleure préparation des approches commerciales, compréhension de l’écosystème local.</p>
+      <p><b>Exemple :</b> une équipe de prospection prépare ses prises de contact avec une vue plus structurée des acteurs.</p>
+    </div>
+
+    <div class="card" id="s3">
+      <h2>3) Écran de recherche — chaque champ expliqué</h2>
+      <p><i>Astuce :</i> commencez avec des filtres simples, puis affinez en 2e passe.</p>
+
+      <h3>3.1 Zone et calendrier</h3>
+      <h4>Départements</h4>
+      <ul><li><b>Rôle :</b> définit où chercher.</li><li><b>Exemple :</b> <code>93, 94</code> = opportunités uniquement sur ces départements.</li></ul>
+      <h4>Date min</h4>
+      <ul><li><b>Rôle :</b> borne de départ de l’historique analysé.</li><li><b>Exemple :</b> <code>2024-01-01</code>.</li></ul>
+      <h4>Date max</h4>
+      <ul><li><b>Rôle :</b> borne de fin.</li><li><b>Exemple :</b> vide = jusqu’à aujourd’hui.</li></ul>
+
+      <h3>3.2 Critères économiques principaux</h3>
+      <h4>Terrains seulement</h4>
+      <ul><li><b>Rôle :</b> focaliser sur les dossiers avec surface terrain pertinente.</li><li><b>Exemple :</b> activé en prospection foncière.</li></ul>
+      <h4>Surface terrain min (m²)</h4>
+      <ul><li><b>Rôle :</b> éliminer les petites emprises.</li><li><b>Exemple :</b> <code>1000</code>.</li></ul>
+      <h4>Prix/m² terrain min</h4>
+      <ul><li><b>Rôle :</b> éviter les valeurs anormalement basses.</li><li><b>Exemple :</b> <code>50</code>.</li></ul>
+      <h4>Prix/m² terrain max</h4>
+      <ul><li><b>Rôle :</b> rester dans votre capacité cible.</li><li><b>Exemple :</b> <code>1500</code>.</li></ul>
+      <h4>Delta vs médiane commune min (€/m²)</h4>
+      <ul><li><b>Rôle :</b> mesure l’écart favorable par rapport au marché local.</li><li><b>Exemple :</b> <code>100</code>.</li></ul>
+
+      <h3>3.3 Maîtrise du volume</h3>
+      <h4>TOP N (limite SQL)</h4>
+      <ul><li><b>Rôle :</b> limite le nombre de dossiers ramenés.</li><li><b>Exemple :</b> <code>300</code>.</li></ul>
+      <h4>Seuil max pour générer la carte</h4>
+      <ul><li><b>Rôle :</b> évite une carte trop lourde.</li><li><b>Exemple :</b> <code>500</code> = affiner les filtres au-delà.</li></ul>
+
+      <h3>3.4 Priorisation</h3>
+      <h4>Formule score</h4>
+      <ul><li><b>Rôle :</b> personnalise le classement.</li><li><b>Exemple :</b> “écart prix × surface”.</li></ul>
+
+      <h3>3.5 Affichage géographique</h3>
+      <h4>Mode géométrie</h4>
       <ul>
-        <li>Certains champs n’apparaissent que si l’enrichissement correspondant est activé (ex: PLU GPU).</li>
-        <li>En cas de données manquantes, le popup affiche « Non disponible » ou des cellules vides.</li>
-        <li>La carte finale filtre les lignes sans géométrie exploitable (<code>geo</code>).</li>
+        <li><b>Centroid :</b> point central (rapide).</li>
+        <li><b>Parcelle :</b> contour parcellaire (qualification).</li>
+        <li><b>Bâtiment :</b> contour bâtiment (plus fin).</li>
       </ul>
+      <h4>Simplification</h4>
+      <ul><li><b>Rôle :</b> accélère l’affichage.</li><li><b>Exemple :</b> <code>10</code>.</li></ul>
+      <h4>Parcelle principale uniquement</h4>
+      <ul><li><b>Rôle :</b> réduit les doublons.</li><li><b>Exemple :</b> activé en phase de tri.</li></ul>
+
+      <h3>3.6 Enrichissements (cases à cocher)</h3>
+      <ul>
+        <li><b>Adresse :</b> lecture terrain plus intuitive.</li>
+        <li><b>Propriétaires :</b> éléments acteurs utiles pour l’approche.</li>
+        <li><b>Permis :</b> historique des signaux projet.</li>
+        <li><b>Urbanisme :</b> contraintes/contextes réglementaires.</li>
+        <li><b>PLU :</b> zonage réglementaire.</li>
+      </ul>
+
+      <h3>3.7 Scope parcellaire (couverture élargie)</h3>
+      <ul>
+        <li><b>Inclure scope parcelles :</b> élargit la couverture.</li>
+        <li><b>Limiter aux parcelles avec signal permis :</b> garde les cas les plus dynamiques.</li>
+        <li><b>Inclure scope DVF :</b> renforce via historique transactionnel.</li>
+        <li><b>Limite max lignes scope parcelles :</b> contrôle le volume.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="s4">
+      <h2>4) Carte — fiche opportunité champ par champ</h2>
+      <p>Quand vous cliquez un point/contour, une fiche s’ouvre.</p>
+
+      <h3>4.1 Identification du dossier</h3>
+      <ul>
+        <li><b>Transaction :</b> type d’opération (ex. vente).</li>
+        <li><b>Parcelle :</b> identifiant parcellaire.</li>
+        <li><b>Cadastre :</b> section + numéro + code commune.</li>
+        <li><b>Commune :</b> nom de commune.</li>
+        <li><b>Adresse :</b> affichée quand disponible.</li>
+        <li><b>Type de bien :</b> terrain / résidentiel / activité…</li>
+        <li><b>Date mutation :</b> date de transaction.</li>
+      </ul>
+
+      <h3>4.2 Valeur et dimensions</h3>
+      <ul>
+        <li><b>Valeur foncière :</b> montant observé.</li>
+        <li><b>Surface terrain :</b> taille du terrain.</li>
+        <li><b>Surface parcelle :</b> surface cadastrale.</li>
+        <li><b>Surface bâti :</b> surface bâtie associée.</li>
+        <li><b>Ratio bâti/parcelle :</b> indice d’occupation.</li>
+        <li><b>Visuel bâti :</b> représentation graphique rapide.</li>
+      </ul>
+
+      <h3>4.3 Prix et attractivité</h3>
+      <ul>
+        <li><b>Prix/m² terrain :</b> comparaison rapide des dossiers.</li>
+        <li><b>Médiane commune :</b> référence locale.</li>
+        <li><b>Écart :</b> différence vs référence locale.</li>
+        <li><b>Score :</b> priorité calculée.</li>
+      </ul>
+      <p><b>Exemple :</b> grand terrain + écart favorable + bon score = dossier à qualifier en priorité.</p>
+
+      <h3>4.4 Caractéristiques du bâti</h3>
+      <ul>
+        <li><b>Année construction :</b> idée de l’âge du bâti.</li>
+        <li><b>Nb niveaux :</b> indication de gabarit.</li>
+        <li><b>Usage (niveau 1) :</b> grande catégorie d’usage.</li>
+        <li><b>Usage principal :</b> vocation simplifiée du site.</li>
+      </ul>
+
+      <h3>4.5 Propriétaires et acteurs</h3>
+      <ul>
+        <li><b>Propriétaires :</b> liste quand disponible.</li>
+        <li><b>SIREN valides / autres identifiants :</b> qualification des acteurs.</li>
+        <li><b>Liens sociétés :</b> compléments d’analyse externes.</li>
+      </ul>
+
+      <h3>4.6 Permis et occupants</h3>
+      <ul>
+        <li><b>Historique permis :</b> date, numéro, nature, statut, surfaces.</li>
+        <li><b>Occupants :</b> aide à comprendre le tissu économique.</li>
+        <li><b>Demandeurs :</b> acteurs porteurs de projets.</li>
+      </ul>
+
+      <h3>4.7 Énergie</h3>
+      <ul><li><b>DPE logement / tertiaire :</b> classe, consommation, GES.</li></ul>
+      <p><b>Exemple :</b> performance faible = potentiel de rénovation/repositionnement.</p>
+
+      <h3>4.8 Urbanisme / PLU</h3>
+      <ul>
+        <li><b>Urbanisme :</b> contexte réglementaire/patrimonial.</li>
+        <li><b>PLU :</b> zone et liens documentaires.</li>
+      </ul>
+      <p><b>Important :</b> pré-qualification uniquement ; validation réglementaire finale indispensable.</p>
+    </div>
+
+    <div class="card" id="s5">
+      <h2>5) Table de résultats — à quoi elle sert</h2>
+      <p>La table est la vue “pilotage pipeline” : tri par score, comparaison multi-dossiers, extraction d’une short-list.</p>
+      <p><b>Méthode type :</b></p>
+      <ol>
+        <li>trier par score,</li>
+        <li>vérifier prix/m² et surfaces,</li>
+        <li>contrôler signaux permis,</li>
+        <li>produire une liste “Top 20 actions”.</li>
+      </ol>
+    </div>
+
+    <div class="card" id="s6">
+      <h2>6) Questions métier auxquelles les champs répondent</h2>
+      <ul>
+        <li><b>Où ?</b> départements, commune, adresse, carte.</li>
+        <li><b>Quand ?</b> dates de mutation, historique.</li>
+        <li><b>Combien ?</b> valeur foncière, surfaces, prix/m².</li>
+        <li><b>Quel potentiel ?</b> écart local, score, ratio, permis.</li>
+        <li><b>Quel contexte ?</b> urbanisme, PLU, énergie, acteurs.</li>
+        <li><b>Que faire ensuite ?</b> prioriser actions commerciales/études.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="s7">
+      <h2>7) Limites et bon usage</h2>
+      <ul>
+        <li>L’outil accélère la détection et la priorisation.</li>
+        <li>Il ne remplace pas l’expertise terrain, juridique et urbanistique.</li>
+        <li>Les données peuvent être incomplètes selon les zones/cas.</li>
+      </ul>
+      <p><b>Conclusion :</b> utilisez l’outil comme un accélérateur de décision, puis confirmez avec les validations métier habituelles.</p>
     </div>
   </div>
 </body>

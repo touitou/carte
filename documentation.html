@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Documentation — Opportunités foncières et immobilières</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #1d4ed8;
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 24px auto;
+      padding: 0 16px 32px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    h1, h2, h3, h4 { margin: 0 0 10px; }
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.25rem; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    h3 { font-size: 1.05rem; color: #111827; }
+    h4 { font-size: 0.98rem; color: #0f172a; }
+    p { margin: 0 0 10px; }
+    ul { margin: 8px 0 12px 20px; }
+    li { margin: 4px 0; }
+    code {
+      background: #eef2ff;
+      color: #1e3a8a;
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-size: 0.92em;
+    }
+    .muted { color: var(--muted); }
+    .toc a { color: var(--accent); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Documentation — Sources de données et champs affichés (écran de recherche + carte)</h1>
+      <p class="muted">Version HTML à destination technique et client.</p>
+      <ul>
+        <li>sources de données utilisées par l’application Gradio BDNB,</li>
+        <li>champs affichés dans l’écran de recherche,</li>
+        <li>champs affichés dans la carte (popup Folium + table HTML),</li>
+        <li>présentation non technique orientée clients/prospects.</li>
+      </ul>
+    </div>
+
+    <div class="card toc">
+      <h2>Sommaire</h2>
+      <ul>
+        <li><a href="#sec0">0) Présentation du projet (version client)</a></li>
+        <li><a href="#sec1">1) Périmètre technique</a></li>
+        <li><a href="#sec2">2) Sources de données</a></li>
+        <li><a href="#sec3">3) Champs affichés dans l’écran de recherche</a></li>
+        <li><a href="#sec4">4) Champs affichés dans la carte (popup)</a></li>
+        <li><a href="#sec5">5) Champs affichés dans la table HTML</a></li>
+        <li><a href="#sec6">6) Logique d’assemblage (résumé)</a></li>
+        <li><a href="#sec7">7) Remarques importantes</a></li>
+      </ul>
+    </div>
+
+    <div class="card" id="sec0">
+      <h2>0) Présentation du projet (version client)</h2>
+
+      <h3>À quoi sert ce projet ?</h3>
+      <p>Cette solution aide à <b>identifier rapidement des opportunités foncières et immobilières</b> à partir de données publiques et d’enrichissements métiers.</p>
+      <ul>
+        <li>repérer des parcelles potentiellement intéressantes,</li>
+        <li>visualiser ces opportunités sur une carte interactive,</li>
+        <li>comprendre le contexte (prix, surface, permis, usages, contraintes urbanistiques),</li>
+        <li>prioriser les dossiers grâce à un <b>score</b>.</li>
+      </ul>
+
+      <h3>Pour quels usages ?</h3>
+      <ul>
+        <li>prospection foncière,</li>
+        <li>qualification d’un secteur avant acquisition,</li>
+        <li>aide à la décision pour développeurs, investisseurs, aménageurs,</li>
+        <li>préparation d’échanges avec partenaires, collectivités et équipes internes.</li>
+      </ul>
+
+      <h3>D’où viennent les données ? (explication simple)</h3>
+      <ul>
+        <li><b>DVF</b> : historique des transactions immobilières (prix, dates, surfaces),</li>
+        <li><b>BDNB</b> : informations bâtiment/parcelle (géométrie, usages, adresses...),</li>
+        <li><b>Sitadel / autorisations d’urbanisme</b> : signaux de permis et dynamiques de transformation,</li>
+        <li><b>PLU (Géoportail de l’urbanisme / IGN)</b> : zonage et documents de référence,</li>
+        <li>et, selon options, des compléments pour mieux qualifier occupants/propriétaires.</li>
+      </ul>
+
+      <h3>Quelle valeur pour un client ?</h3>
+      <ul>
+        <li><b>gain de temps</b> sur la recherche,</li>
+        <li><b>vision cartographique immédiate</b>,</li>
+        <li><b>priorisation objective</b> via des critères paramétrables,</li>
+        <li><b>meilleure préparation</b> des analyses terrain et décisions.</li>
+      </ul>
+
+      <h3>Quels types de potentiels cela permet d’ouvrir ?</h3>
+      <h4>1) Potentiel foncier</h4>
+      <ul>
+        <li>Parcelles sous-valorisées au regard des références locales.</li>
+        <li>Surfaces de terrain importantes avec faible niveau d’occupation bâtie.</li>
+        <li>Opportunités de recomposition parcellaire ou d’assemblage.</li>
+      </ul>
+
+      <h4>2) Potentiel de densification / transformation</h4>
+      <ul>
+        <li>Sites avec marge de création de surface (selon contexte urbanistique).</li>
+        <li>Parcelles présentant des signaux de transformation via les permis.</li>
+        <li>Bâtiments ou emprises pouvant faire l’objet d’un repositionnement.</li>
+      </ul>
+
+      <h4>3) Potentiel de requalification d’actifs</h4>
+      <ul>
+        <li>Actifs anciens à revaloriser (année de construction, usage, état énergétique).</li>
+        <li>Ciblage de poches de valeur via croisement prix/surfaces/usages.</li>
+        <li>Hiérarchisation des actifs à arbitrer, rénover ou transformer.</li>
+      </ul>
+
+      <h4>4) Potentiel commercial et pipeline</h4>
+      <ul>
+        <li>Constitution d’un pipeline qualifié de cibles.</li>
+        <li>Priorisation des actions de prospection selon score et critères métiers.</li>
+        <li>Préparation de rendez-vous et argumentaires avec données objectivées.</li>
+      </ul>
+
+      <h4>5) Potentiel partenarial et territorial</h4>
+      <ul>
+        <li>Dialogue renforcé avec collectivités et partenaires locaux.</li>
+        <li>Identification de secteurs cohérents avec une stratégie d’implantation.</li>
+        <li>Appui à la planification d’actions par zone géographique.</li>
+      </ul>
+
+      <h4>6) Potentiel ESG / transition</h4>
+      <ul>
+        <li>Repérage d’actifs à enjeu énergétique (DPE).</li>
+        <li>Orientation vers des scénarios de rénovation et amélioration de performance.</li>
+        <li>Intégration des contraintes urbanistiques dans une stratégie durable.</li>
+      </ul>
+
+      <p><b>En résumé :</b> la plateforme aide à construire une stratégie d’opportunités multi-axes (foncier, transformation, commercial, territorial, ESG).</p>
+
+      <h3>Important à retenir</h3>
+      <ul>
+        <li>L’outil est un <b>assistant d’analyse</b> : il accélère le tri et la compréhension.</li>
+        <li>Les résultats doivent être <b>confirmés</b> par expertise métier et vérifications locales.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="sec1">
+      <h2>1) Périmètre technique</h2>
+      <ul>
+        <li><b>Écran de recherche</b> : <code>run_gradio_bdnb.py</code> (<code>build_demo()</code>)</li>
+        <li><b>Pipeline calcul/enrichissement</b> : <code>immo_bdnb.py</code> (<code>run_bdnb_opportunites</code>)</li>
+        <li><b>Carte et popup</b> : <code>immo_folium.py</code> (<code>build_map_html</code>)</li>
+        <li><b>Table HTML</b> : <code>immo_folium.py</code> (<code>build_table_html</code>)</li>
+      </ul>
+    </div>
+
+    <div class="card" id="sec2">
+      <h2>2) Sources de données</h2>
+      <h3>2.1 Source principale BDNB (DuckDB)</h3>
+      <ul>
+        <li>Fichier : <code>bdnb_millesime_2025-07-a.duckdb</code></li>
+        <li>Tables principales : <code>batiment_groupe_dvf_open_representatif</code>, <code>batiment_groupe</code>, <code>parcelle</code>, <code>adresse</code>, <code>proprietaire</code>, <code>sitadel</code>, <code>batiment_groupe_urbanisme</code>, <code>batiment_groupe_dpe_*</code>...</li>
+      </ul>
+
+      <h3>2.2 Source DVF CSV (scope complémentaire)</h3>
+      <ul>
+        <li>Paramètre UI : <code>DVF CSV glob</code></li>
+        <li>Défaut : <code>downloads/csv/National/merged/dvf_plus_d*.csv</code></li>
+      </ul>
+
+      <h3>2.3 Source permis CSV (Sitadel externe)</h3>
+      <ul>
+        <li>Paramètre UI : <code>Permis CSV path</code></li>
+        <li>Défaut : <code>data/Liste-des-autorisations-durbanisme-creant-des-locaux-non-residentiels.2025-12.csv</code></li>
+      </ul>
+
+      <h3>2.4 API IGN GPU (optionnelle)</h3>
+      <ul>
+        <li>Option UI : <code>PLU GPU (API IGN, réseau, cache)</code></li>
+        <li>API : <code>https://apicarto.ign.fr/api/gpu/zone-urba</code></li>
+        <li>Cache local : <code>cache_plu_gpu.parquet</code></li>
+      </ul>
+
+      <h3>2.5 Cache SIRENE (optionnel)</h3>
+      <ul>
+        <li>Géré via <code>sirene_cache.py</code> / <code>cache_enrich.duckdb</code></li>
+      </ul>
+    </div>
+
+    <div class="card" id="sec3">
+      <h2>3) Champs affichés dans l’écran de recherche (Gradio)</h2>
+
+      <h3>3.1 Critères principaux</h3>
+      <ul>
+        <li><code>db_path</code>, <code>dvf_csv_glob</code>, <code>permis_csv_path</code></li>
+        <li><code>departements</code>, <code>date_min</code>, <code>date_max</code></li>
+        <li><code>terrain_only</code>, <code>surface_terrain_min</code></li>
+        <li><code>prix_m2_terrain_min</code>, <code>prix_m2_terrain_max</code></li>
+        <li><code>delta_ref_min</code>, <code>top_n</code>, <code>hard_cap</code></li>
+      </ul>
+
+      <h3>3.2 Scoring</h3>
+      <ul><li><code>score_formula</code></li></ul>
+
+      <h3>3.3 Géométrie / performance</h3>
+      <ul>
+        <li><code>geom_mode</code> : <code>centroid</code> | <code>parcelle</code> | <code>batiment</code></li>
+        <li><code>simplify_m</code>, <code>parcelle_principale_only</code></li>
+      </ul>
+
+      <h3>3.4 Enrichissements</h3>
+      <ul>
+        <li><code>include_adresse</code>, <code>include_proprietaires</code>, <code>include_permis</code></li>
+        <li><code>include_urbanisme_bdnb</code>, <code>include_plu_gpu</code></li>
+      </ul>
+
+      <h3>3.5 Scope parcellaire</h3>
+      <ul>
+        <li><code>include_parcelles_scope</code>, <code>parcelles_scope_requires_permis</code></li>
+        <li><code>include_dvf_scope</code>, <code>parcelles_top_n</code></li>
+      </ul>
+
+      <h3>3.6 Sorties affichées</h3>
+      <ul>
+        <li><code>status</code>, <code>sql_out</code>, <code>map_out</code>, <code>table_out</code></li>
+        <li>Liens des fichiers HTML et bloc publication GitHub Pages.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="sec4">
+      <h2>4) Champs affichés dans la carte (popup Folium)</h2>
+      <h3>4.1 Fiche</h3>
+      <p>Transaction, parcelle, cadastre, commune, adresse, type de bien, date mutation, valeur foncière, surfaces, ratio bâti/parcelle, prix/m², médiane commune, écart, score, année construction, niveaux, usages.</p>
+
+      <h3>4.2 Propriétaires</h3>
+      <p>Liste propriétaires, SIREN valides, autres IDs, liens sociétés (Annuaire, Pappers, Societe.com).</p>
+
+      <h3>4.3 Permis & occupants</h3>
+      <p>Historique permis, occupants SIRENE (si disponibles), demandeurs Sitadel.</p>
+
+      <h3>4.4 Énergie (DPE)</h3>
+      <p>DPE logement et tertiaire (classe, conso, GES).</p>
+
+      <h3>4.5 Urbanisme</h3>
+      <p>Monument historique, dénomination, distance.</p>
+
+      <h3>4.6 PLU</h3>
+      <p>Zone PLU (GPU/BDNB), partition, liens Géoportail, règlement et autres documents.</p>
+    </div>
+
+    <div class="card" id="sec5">
+      <h2>5) Champs affichés dans la table HTML associée à la carte</h2>
+      <p>La table reprend les colonnes disponibles parmi la sélection prioritaire du code (<code>cols_pref</code>) :</p>
+      <p><code>score</code>, <code>date_mutation</code>, <code>valeur_fonciere</code>, <code>surface_terrain_mutee</code>, <code>parcelle_area_m2</code>, <code>batiment_area_m2</code>, <code>bati_ratio</code>, <code>prix_m2_terrain</code>, <code>prix_m2_ref_commune</code>, <code>delta_ref</code>, <code>libelle_commune_insee</code>, <code>libelle_adresse</code>, <code>annee_construction</code>, <code>usage_niveau_1_txt</code>, <code>usage_principal_bdnb_open</code>, <code>dpe_logement_classe</code>, <code>dpe_logement_conso_ep_m2</code>, <code>dpe_logement_ges_kgco2_m2</code>, <code>liste_proprietaires</code>, <code>nb_siren_valides</code>, <code>nb_ids_autres</code>, <code>nb_permis</code>, <code>permis_last_date</code>, <code>permis_last_numero</code>, <code>permis_last_nature</code>, <code>permis_last_statut</code>, <code>permis_last_s_hab_creee</code>, <code>permis_last_s_loc_creee</code>, <code>nb_demandeurs_permis</code>, <code>liste_demandeurs_permis</code>, <code>plu_zone_code</code>, <code>plu_zone_type</code>, <code>plu_doc_partition</code>, <code>zone_plu_bati_patrimonial</code>.</p>
+    </div>
+
+    <div class="card" id="sec6">
+      <h2>6) Logique d’assemblage (résumé)</h2>
+      <ol>
+        <li>Filtrage principal transactions (BDNB + critères écran)</li>
+        <li>Extension optionnelle scope parcelles BDNB</li>
+        <li>Extension optionnelle scope DVF CSV</li>
+        <li>Enrichissements (adresse, propriétaires, permis, DPE, urbanisme)</li>
+        <li>Calcul du score</li>
+        <li>Construction géométrie affichée (<code>centroid</code>/<code>parcelle</code>/<code>batiment</code>)</li>
+        <li>Enrichissement optionnel PLU GPU</li>
+        <li>Rendu carte + popup + table HTML</li>
+      </ol>
+    </div>
+
+    <div class="card" id="sec7">
+      <h2>7) Remarques importantes</h2>
+      <ul>
+        <li>Certains champs n’apparaissent que si l’enrichissement correspondant est activé (ex: PLU GPU).</li>
+        <li>En cas de données manquantes, le popup affiche « Non disponible » ou des cellules vides.</li>
+        <li>La carte finale filtre les lignes sans géométrie exploitable (<code>geo</code>).</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
